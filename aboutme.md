@@ -4,8 +4,6 @@ title: About me
 subtitle: Driven by Academic Excellence, Leadership, and a Passion for Technology
 ---
 
-# About Me
-
 I am currently a senior at **Burbank High School**, with plans to apply as a first-year student in either 2024 or 2025. Alongside my high school education, I’ve also taken college courses at **Los Angeles Valley College** and **Los Angeles Mission College** to deepen my academic experience.
 
 Throughout my academic journey, I have been recognized for my accomplishments and dedication. I am proud to be a **National Cyber Scholarship Foundation Scholar with Honors**, having received the **CyberStart Silver & Bronze Awards**. In mathematics, I earned **3rd place in the U.S.** and **2nd place in California** in the **Math Kangaroo Competition**, which included over 6 million participants worldwide. I am also an **AP Scholar with Distinction** and a **California Scholarship Federation Gold Seal Bearer**, where I serve as a volunteer tutor and club leader.
