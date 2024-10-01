@@ -21,6 +21,8 @@ author: Anjena Raja
 
 navbar-links:
   About Me: "aboutme"
+  Projects:
+    - Laser Communication in Space: "laser-communication-in-space.md"
   #Resources:
   #  - Beautiful Jekyll: "https://beautifuljekyll.com"
   #  - Learn markdown: "https://www.markdowntutorial.com/"
