@@ -1,11 +1,7 @@
 ---
-layout: post
+layout: page
 title: Marquee Display Board
 subtitle: Individual Creativity Project
-thumbnail-img: /assets/img/esp8266.png
-share-img: /assets/img/esp8266.png
-tags: [microcontroller, esp8266, c++, android-app]
-author: Anjena Raja
 ---
 
 # Problem Statement
