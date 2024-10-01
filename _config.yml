@@ -22,6 +22,10 @@ author: Anjena Raja
 navbar-links:
   Projects & Experiments:
     - Laser Communication in Space: "laser-communication-in-space"
+    - Marquee Display Board: "display-board"
+    - Drip Irrigation: "drip-irrigation"
+    - Growing Plants in Artificial Light: "growing-plant-in-artificial-light"
+    - Home Automation System: "home-automation-system"
   About Me: "aboutme"
   #Resources:
   #  - Beautiful Jekyll: "https://beautifuljekyll.com"
