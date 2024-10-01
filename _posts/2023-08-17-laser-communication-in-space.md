@@ -2,7 +2,6 @@
 layout: post
 title: Laser Communication in Space
 subtitle: Internship Project at RTX (Raytheon)
-cover-img: /assets/img/pi-pico.svg
 thumbnail-img: /assets/img/pi-pico.svg
 share-img: /assets/img/pi-pico.svg
 tags: [microcontroller, pi-pico]
