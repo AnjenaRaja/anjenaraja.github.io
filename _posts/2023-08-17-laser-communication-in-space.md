@@ -53,3 +53,62 @@ There are two boards with one representing the base station, JPL, and the other 
 ###### [Link to video of the demo](https://drive.google.com/file/d/1SWhcR6_NXC8evElUV2Yza1MXnxlzi6qL/view?usp=sharing){:target="_blank"}
 ###### [Link to presentation slides](https://docs.google.com/presentation/d/1zszqOG7fdWVzj55BVmTPCa5D9BhMQLyoGpIfbuguXEk/edit?usp=sharing){:target="_blank"}
 
+![Figure-4](/assets/img/lcs/fig-4.png){: .mx-auto.d-block :}
+
+Commands are typed into the Arduino IDE serial monitor for JPL. 
+
+![Figure-5](/assets/img/lcs/fig-5.png){: .mx-auto.d-block :}
+
+The monitor corresponding to the rover outputs a “received” message once it gets a signal. It then provides a “sent” message after it has finished transmitting data via the infrared LED. These are used for debugging purposes to ensure transmission works smoothly. 
+
+![Figure-6](/assets/img/lcs/fig-6.png){: .mx-auto.d-block :}
+
+The JPL monitor has received the requested data and has displayed it in its serial monitor. A timestamp is included in the rover and JPL messages to confirm the order of events. 
+
+## Temperature
+
+| JPL Input Command | CORE_TEMP |
+| :------ |:--- |
+| Rover Debug Messages | CORE_TEMP - received.<br>CORE temperature - sent. |
+| Rover Action | - |
+| JPL Displayed Message Example | CORE temperature: 301.7 K |
+
+As shown above, the rover can send over its temperature using the CORE_TEMP command, returning a value in Kelvin. This is measured using the rover’s onboard temperature sensor. This illustrates the rover can return collected sensor data. 
+
+## Beacon
+
+| JPL Input Command | BEACON_ON |
+| :------ |:--- |
+| Rover Debug Messages | BEACON_ON - received.<br>BEACON turned ON - sent. |
+| Rover Action | Flashing LED is turned on. |
+| JPL Displayed Message Example | BEACON turned ON. |
+
+| JPL Input Command | BEACON_OFF |
+| :------ |:--- |
+| Rover Debug Messages | BEACON_OFF - received.<br>BEACON turned OFF - sent. |
+| Rover Action | Flashing LED is turned off. |
+| JPL Displayed Message Example | BEACON turned OFF. |
+
+A flashing LED, representing the rover’s beacon can be turned on and off using the BEACON_ON and BEACON_OFF commands. The rover returns a message confirming it has taken the action. This allows the base station to remotely control the rover’s peripherals. 
+
+## Image transmission
+
+| JPL Input Command | SEND_IMAGE |
+| :------ |:--- |
+| Rover Debug Messages | SEND_IMAGE - received.<br>Base64 encoded image - sent. |
+| Rover Action | - |
+| JPL Displayed Message Example | Base64 encoded image: iVBO…CYII= |
+
+Image transmission is one of the most important uses of high-speed laser communication. An image needs to be encoded into a text format so that it can be sent via infrared LEDs. This can be accomplished using the Base64 encoding. The desired image is encoded using Base64 and the characters are stored in the rover’s code. When JPL sends its request for the image, the rover simply returns this already encoded image. The data JPL receives can then be restored to its original format using a Base64 decoder. A link is included below. 
+
+###### [Link to image conversion site](https://codebeautify.org/base64-to-image-converter)
+
+## Camera movement
+
+| JPL Input Command | CAMERA_ANGLE_90 or 0 or 180 |
+| :------ |:--- |
+| Rover Debug Messages | CAMERA_ANGLE_90 - received.<br>Camera rotation - sent. |
+| Rover Action | Servo motor is rotated. |
+| JPL Displayed Message Example | Camera rotated. |
+
+A servo motor is rotated, representing a rover’s camera being adjusted to take a photo. This shows that JPL can control the mechanical aspects of the rover. The command CAMERA_ANGLE_0, CAMERA_ANGLE_90, or CAMERA_ANGLE_180 is specified and the servo motor moves to the corresponding position. So, if the same command is specified twice, the motor will not move. 
