@@ -351,7 +351,7 @@ This pulsating infrared technology is well suited for a myriad of other use case
 + Advanced Encryption Standard (AES). 1 Nov. 2001, doi.org/10.6028/nist.fips.197.
 + Baird, Daniel. “Laser Communications: Empowering More Data Than Ever Before.” NASA, May 2021, nasa.gov/feature/goddard/2021/laser-communications-empowering-more-data-than-ever-before.
 + Buinhas, Luisa, et al. “Key Challenges in Establishing Laser Space Communication Standards and Recommendations of the SGC Space...” ResearchGate, Oct. 2018, researchgate.net/publication/328478337_Key_Challenges_in_Establishing_Laser_Space_Communication_Standards_and_Recommendations_of_the_SGC_Space_Technologies_Working_Group.
-+ “Communications System Achieves Fastest Laser Link From Space Yet.” MIT News | Massachusetts Institute of Technology, 30 Nov. 2022, news.mit.edu/2022/communications-system-achieves-fastest-laser-link-space-yet-1130.
++ “Communications System Achieves Fastest Laser Link From Space Yet.” MIT News. Massachusetts Institute of Technology, 30 Nov. 2022, news.mit.edu/2022/communications-system-achieves-fastest-laser-link-space-yet-1130.
 + CWE -  2023 CWE Top 25 Most Dangerous Software Weaknesses. cwe.mitre.org/top25/archive/2023/2023_top25_list.html.
 + Diolante. “Wireless Laser Communication With Arduino: A Prototype.” Instructables, May 2022, instructables.com/Sending-Messages-Using-Lasers-With-Arduino.
 + HobbyTransform. “Arduino Encoded and Modulated Laser and Infrared Serial Communication.” Instructables, Sept. 2017, instructables.com/Arduino-Encoded-and-Modulated-Laser-and-Infrared-S.
@@ -361,7 +361,7 @@ This pulsating infrared technology is well suited for a myriad of other use case
 + Monaghan, Heather. “Delay/Disruption Tolerant Networking Overview.” NASA, Dec. 2021, nasa.gov/directorates/heo/scan/engineering/technology/disruption_tolerant_networking.
 + NASA. “Communications With Earth.” NASA Mars Exploration, mars.nasa.gov/msl/mission/communications.
 + NASA. “Optical Communications Challenges.” NASA, Aug. 2021, nasa.gov/directorates/heo/scan/opticalcommunications/challenges.
-+ Pahor, David. “Reliable Laser Communications Between Space and Ground | Cosylab.” Cosylab, 13 Dec. 2022, cosylab.com/2022/03/25/reliable-laser-communications-between-space-and-ground
++ Pahor, David. “Reliable Laser Communications Between Space and Ground. Cosylab.” Cosylab, 13 Dec. 2022, cosylab.com/2022/03/25/reliable-laser-communications-between-space-and-ground
 
 # Further materials
 
