@@ -1,11 +1,7 @@
 ---
-layout: post
+layout: page
 title: Laser Communication in Space
 subtitle: Internship Project at RTX (Raytheon)
-thumbnail-img: /assets/img/pi-pico.svg
-share-img: /assets/img/pi-pico.svg
-tags: [microcontroller, pi-pico, c++]
-author: Anjena Raja
 ---
 
 # Problem Statement
