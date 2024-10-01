@@ -105,7 +105,7 @@ iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABIFBMVEX///8AAACvuMns7Oz813CMlaS2
 ```
 ### Sample base 64 decoded image
 
-![rover.png](/assets/img/lcs/rover.png){: .mx-auto.d-block :}
+![rover.png](/assets/img/lcs/rover.png)
 
 Image transmission is one of the most important uses of high-speed laser communication. An image needs to be encoded into a text format so that it can be sent via infrared LEDs. This can be accomplished using the Base64 encoding. The desired image is encoded using Base64 and the characters are stored in the rover’s code. When JPL sends its request for the image, the rover simply returns this already encoded image. The data JPL receives can then be restored to its original format using a Base64 decoder. A link is included below. 
 
