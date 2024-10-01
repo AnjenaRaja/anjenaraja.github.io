@@ -121,6 +121,22 @@ Image transmission is one of the most important uses of high-speed laser communi
 
 A servo motor is rotated, representing a rover’s camera being adjusted to take a photo. This shows that JPL can control the mechanical aspects of the rover. The command CAMERA_ANGLE_0, CAMERA_ANGLE_90, or CAMERA_ANGLE_180 is specified and the servo motor moves to the corresponding position. So, if the same command is specified twice, the motor will not move. 
 
+## JPL Breadboard Model
+
+![Figure-7](/assets/img/lcs/fig-7.png){: .mx-auto.d-block :}
+
+## Rover Breadboard Model
+
+![Figure-8](/assets/img/lcs/fig-8.png){: .mx-auto.d-block :}
+
+## JPL Circuit Diagram
+
+![Figure-9](/assets/img/lcs/fig-9.png){: .mx-auto.d-block :}
+
+## Rover Circuit Diagram
+
+![Figure-10](/assets/img/lcs/fig-10.png){: .mx-auto.d-block :}
+
 ## JPL code
 
 ``` cpp
