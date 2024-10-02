@@ -2,8 +2,6 @@
 layout: page
 title: Laser Communication in Space
 subtitle: Internship Project at RTX (Raytheon)
-tags: [microcontroller, raspberry-pi-pico, c++]
-thumbnail-img: /assets/img/pi-pico.svg
 ---
 
 # Problem Statement
