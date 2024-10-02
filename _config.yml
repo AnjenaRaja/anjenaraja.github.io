@@ -23,8 +23,9 @@ navbar-links:
   Projects & Experiments:
     - Laser Communication in Space: "laser-communication-in-space"
     - Marquee Display Board: "display-board"
-    - Drip Irrigation: "drip-irrigation"
+    - Human Reaction Time: "human-reaction-time"
     - Growing Plants in Artificial Light: "growing-plant-in-artificial-light"
+    - Drip Irrigation: "drip-irrigation"
     - Home Automation System: "home-automation-system"
   About Me: "aboutme"
   #Resources:
