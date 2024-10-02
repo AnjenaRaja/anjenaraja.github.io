@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Awards & Accomplishments
+title: Awards, Accomplishments and Certifications
 subtitle: Honoring Milestones in Technology, Education, and Service
 ---
 
