@@ -22,10 +22,10 @@ author: Anjena Raja
 navbar-links:
   Projects & Experiments:
     - Laser Communication in Space: "laser-communication-in-space"
-    - Marquee Display Board: "display-board"
     - Human Reaction Time: "human-reaction-time"
     - Growing Plants in Artificial Light: "growing-plants-in-artificial-light"
     - Drip Irrigation: "drip-irrigation"
+    - Marquee Display Board: "display-board"
     - Home Automation System: "home-automation-system"
   About Me: "aboutme"
   #Resources:
