@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Home Automation System
-subtitle: Individual Creativity Project
+subtitle: Genius Hour Project
 ---
 
 # Problem Statement
