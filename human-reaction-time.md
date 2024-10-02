@@ -76,5 +76,238 @@ subtitle: An Experiment
 
 ## Experimental Setup
 ![Figure-6](/assets/img/hrt/fig-6.png){: .mx-auto.d-block :}
+
 ![Figure-7](/assets/img/hrt/fig-7.png){: .mx-auto.d-block :}
+
+## Arduino Code
+``` cpp
+// The communication with the display is through I2C 
+#include <Wire.h>
+
+// This is the graphics library
+#include <Adafruit_GFX.h>
+
+// This is the driver for our specific OLED display
+#include <Adafruit_SSD1306.h>
+
+// The display we use does not have a reset pin but we need to dedicate one Arduino pin for this purpose so that we use the driver
+// We should not use the digital pin #4 of Arduino for our project any more
+#define OLED_RESET 4
+Adafruit_SSD1306 display(OLED_RESET);
+
+// Auto/Manual selection mode switch connected to pin #2 of Arduino
+const int modeSwitchPin = 2;
+// Our press switch is connected to the digital pin #10 of Arduino
+const int reactionSwitchPin = 10;
+// Our LED us connected to the digital pin #11 of Arduino
+const int LEDPin = 11;
+// Our speaker is connected to digital pin #3 of Arduino
+const int speakerPin = 3;
+// Our Vibration motor is connected to digital pin #5 of Arduino
+const int vibrationPin = 5;
+// Our Electromagnet is connected to the digital pin #12 of Ardunio
+const int electromagnetPin = 12;
+
+void setup() 
+{
+  // put your setup code here, to run once:
+
+  // Display related initializations
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.clearDisplay();
+  display.display();
+  
+  pinMode(modeSwitchPin, INPUT_PULLUP);
+  pinMode(reactionSwitchPin, INPUT_PULLUP);
+  pinMode(LEDPin, OUTPUT);
+  pinMode(vibrationPin, OUTPUT);
+  pinMode(electromagnetPin, OUTPUT);
+
+  // make LED Off
+  digitalWrite(LEDPin, LOW);
+  // make speaker Off
+  noTone(speakerPin);
+  // make vibration motor Off
+  digitalWrite(vibrationPin, LOW);
+  // make electromagnet Off
+  digitalWrite(electromagnetPin, LOW);
+    
+  randomSeed(analogRead(0));
+}
+
+void loop() 
+{
+  // put your main code here, to run repeatedly:
+
+  // read the state of the mode switch into a local variable
+  int reading = digitalRead(modeSwitchPin);
+
+  if(reading == HIGH) // auto
+  {
+    autoMode();
+  }
+  else // manual
+  {
+    manualMode();
+  }
+  
+  while(1);
+}
+
+void manualMode()
+{
+  // make electromagnet On
+  digitalWrite(electromagnetPin, HIGH);
+
+  // generate a random number anywhere between 7 and 12 seconds
+  // use that to introduce a random delay
+  delay(random(7, 12) * 1000);
+
+  // make electromagnet OFF
+  digitalWrite(electromagnetPin, LOW);
+  // make vibration motor On
+  digitalWrite(vibrationPin, HIGH);
+  // make the LED On
+  digitalWrite(LEDPin, HIGH);
+  // make speaker sound On
+  tone(speakerPin, 262);
+
+  // wait for 3 seconds
+  delay(3000);
+
+  // now disable all outputs
+  // make LED Off
+  digitalWrite(LEDPin, LOW);
+
+  // make speaker Off
+  noTone(speakerPin);
+
+  // make vibration motor Off
+  digitalWrite(vibrationPin, LOW);  
+}
+
+void autoMode()
+{
+  display.clearDisplay();
+  display.setCursor(0,0);  
+  display.display();
+
+  int min = 0;
+  int max = 0;
+  int total = 0;
+
+  int i = 5;
+  while(i)
+  {
+    // make LED Off
+    digitalWrite(LEDPin, LOW);
+
+    // make speaker Off
+    noTone(speakerPin);
+
+    // make vibration motor Off
+    digitalWrite(vibrationPin, LOW);
+    
+    // generate a random number anywhere between 3 and 7 seconds
+    // use that to introduce a random delay
+    delay(random(3, 7) * 1000);
+
+    // now start counting 
+    unsigned long beforeTime = millis();
+    // make vibration motor On
+    digitalWrite(vibrationPin, HIGH);
+    // make the LED On
+    digitalWrite(LEDPin, HIGH);
+    // make speaker sound On
+    tone(speakerPin, 262);
+
+    String text;
+    
+    // wait till the switch is pressed by the user
+    while(1)
+    {
+      // read the state of the switch into a local variable
+      int reading = digitalRead(reactionSwitchPin);
+  
+      if(reading == LOW)
+      {
+        unsigned long afterTime = millis();
+
+        display.setCursor(0,(5-i)*9);  
+        text = "Reaction-" ;
+        text += (6-i);
+        text += "(ms):";
+        display.print(text);
+        display.setCursor(90,(5-i)*9);  
+        int time = afterTime-beforeTime;
+
+        if(min == 0 || time < min)
+        {
+          min = time;
+        }
+        if(max == 0 || time > max)
+        {
+          max = time;
+        }
+        total += time;        
+
+        display.print(time);
+        display.display();
+  
+        break;
+      }
+    }
+
+    i--;
+  }
+
+  // make LED Off
+  digitalWrite(LEDPin, LOW);
+
+  // make speaker Off
+  noTone(speakerPin);
+
+  // make vibration motor Off
+  digitalWrite(vibrationPin, LOW);
+  
+  display.setCursor(0,45);  
+  display.print("Min/Max/Avg (ms):");
+  display.setCursor(0,54);  
+  display.print(min);
+  display.print(", ");
+  display.print(max);
+  display.print(", ");
+  display.print(total/5.0);
+  display.display();
+}
+```
+## Tabulation
+
+![Figure-8](/assets/img/hrt/fig-8.png){: .mx-auto.d-block :}
+
+## Observations
+
+* 17 of the 20 subjects reacted fastest to Sound
+  - Light came in second best for 10 subjects
+  - Touch came in second best for 7 subjects
+* 2 of the 20 subjects reacted fastest to light
+  - Sound came in second for these 2 subjects
+* 1 of the 20 subjects reacted fastest to touch
+  - Light came in second best for this subject
+  - This one subject could not hear the audio cues at all. The subject warned me that it could be the case even before we started the experiment.
+* One of the test subjects could hear sounds in general, but could not hear and respond to the beep that was generated by my cue. 
+* I could see that younger subjects reacted much faster compared to senior citizens. So I used foot-ruler for some and yard stick for others.
+
+![Figure-9](/assets/img/hrt/fig-9.png){: .mx-auto.d-block :}
+
+## Conclusions
+### My hypothesis that a person reacts to sound the fastest is correct.
+* Reaction times varied from one person to another and sometimes significantly. 
+* I think the frequency of the sound might also be another variable worth investigating.
+* It is better to have a combination of sound, light and touch to alert a person so they could respond to the cue that is best for them in case of an impairment. 
+
+## Acknowledgements
+Thanks to all test subjects for participating in my experiment.
 
