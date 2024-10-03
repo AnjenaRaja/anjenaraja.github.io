@@ -93,7 +93,7 @@ module clock (
 endmodule
 ```
 
-### Verilog Code for debouncing logic
+### Verilog Code for Debouncing Switches
 
 ```verilog
 module debounce (
@@ -149,13 +149,87 @@ set_property -dict { PACKAGE_PIN P17   IOSTANDARD LVCMOS33 } [get_ports { reset 
 ```
 
 ## Program Counter
+
+### Verilog Code for Program Counter
+
+```verilog
+module pc (
+    input wire clk,
+    input wire reset,
+    input wire inc,
+    output reg [3:0] pc
+);
+    always @(posedge clk or posedge reset) begin
+        if (reset)
+            pc <= 4'b0;
+        else if (inc)
+            pc <= pc + 1;
+    end
+endmodule
+```
+
 ## Memory (RAM)
 ## Registers
-### Memory Address Register (MAR)
-### Instruction Register (IR)
 ### Accumulator - A Register
+
+#### Verilog code for A Register
+
+```verilog
+module a (
+    input wire clk,
+    input wire reset,
+    input wire load,
+    input wire [7:0] data_in,
+    output reg [7:0] data_out
+);
+    always @(posedge clk or posedge reset) begin
+        if (reset)
+            data_out <= 8'b0;
+        else if (load)
+            data_out <= data_in;
+    end
+endmodule
+```
+
 ### B Register
+
+```verilog
+module b (
+    input wire clk,
+    input wire reset,
+    input wire load,
+    input wire [7:0] data_in,
+    output reg [7:0] data_out
+);
+    always @(posedge clk or posedge reset) begin
+        if (reset)
+            data_out <= 8'b0;
+        else if (load)
+            data_out <= data_in;
+    end
+endmodule
+```
+
+### Memory Address Register (MAR)
+
+### Instruction Register (IR)
+
 ### Output Register
+
+```verilog
+module out (
+    input wire clk,
+    input wire load,
+    input wire [7:0] data_in,
+    output reg [7:0] data_out
+);
+    always @(posedge clk) begin
+        if (load)
+            data_out <= data_in;
+    end
+endmodule
+```
+
 ## Arithmetic and Logic Unit (ALU)
 ## Bus
 ## Control Sequencer
