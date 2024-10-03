@@ -38,33 +38,271 @@ subtitle: An Experiment
 
 # Experimental Setup
 
-![Figure-4](/assets/img/gpal/fig-4.png){: .mx-auto.d-block :}
+![Figure-1](/assets/img/dr/fig-1.png){: .mx-auto.d-block :}
 
-![Figure-5](/assets/img/gpal/fig-5.png){: .mx-auto.d-block :}
+![Figure-2](/assets/img/dr/fig-2.png){: .mx-auto.d-block :}
 
-![Figure-6](/assets/img/gpal/fig-6.png){: .mx-auto.d-block :}
+## Arduino Code
+``` cpp
+// This program requires a Nokia 5110 LCD module.
+//
+// It is assumed that the LCD module is connected to
+// the following pins using a levelshifter to get the
+// correct voltage to the module.
+//      SCK  - Pin 8
+//      MOSI - Pin 9
+//      DC   - Pin 10
+//      RST  - Pin 11
+//      CS   - Pin 12
+//
+//#include <Time.h>
+#include <LCD5110_Graph.h>
+
+LCD5110 myGLCD(8,9,10,11,12);
+
+extern uint8_t SmallFont[];
+
+//set the current time here
+int h = 19;
+int m = 00;
+int s = 00;
+unsigned long start, now;
+
+double m1_Average = 0;
+int m1_Maximum = 0;
+int m1_Minimum = 100;
+
+double m2_Average = 0;
+int m2_Maximum = 0;
+int m2_Minimum = 100;
+
+int sampleSize = 1;
+
+int motor = 7; // for the pump
+int led = 13; // one second blip to show that the thingy is on
+
+boolean toggle = false;
+
+void setup()
+{
+  myGLCD.InitLCD(70);
+  myGLCD.setFont(SmallFont);
+  myGLCD.invert(false);
+
+  // initialize the digital pin as an output.
+  pinMode(led, OUTPUT);     
+  pinMode(motor, OUTPUT);
+
+  pinMode(A0, INPUT);
+  pinMode(A1, INPUT);
+  
+  digitalWrite(motor, LOW);
+}
+
+void incrementTime()
+{
+  // increment seconds
+  s += 1;
+  
+  if(s == 60)
+  { 
+    s = 0; 
+    m += 1; 
+  }
+  
+  if(m == 60)
+  {
+    m = 0; 
+    h += 1; 
+  }
+  
+  if(h == 24)
+  { 
+    // we are interested in 12 hours clock
+    h = 0; 
+    resetValues();
+  } 
+  
+  // water plants at 8 am 
+  // this is for production
+  if(h == 8 && m == 0 && s == 0)
+  {
+    waterPlant();
+  }
+  
+  // this is for testing the system
+  // every 15 seconds as we cannot sit and wait for hours
+  // just comment this out when in production
+  if(s == 0 || s == 30)
+  {
+    waterPlant();
+  }
+}
+
+void resetValues()
+{
+  m1_Average = 0;
+  m1_Maximum = 0;
+  m1_Minimum = 100;
+  
+  m2_Average = 0;
+  m2_Maximum = 0;
+  m2_Minimum = 100;
+
+  sampleSize = 1;
+}
+
+void waterPlant()
+{
+  printWatering();
+  // start motor
+  digitalWrite(motor, HIGH);
+  
+  // delay for 10 seconds
+  for(int i = 0; i< 10; i++)
+  {
+    delay(1000);
+    incrementTime();
+    printTime();
+  }
+
+  // stop motor
+  digitalWrite(motor, LOW);
+  myGLCD.clrScr();
+}
+
+void loop()
+{
+  now = millis();
+  if(now - start >= 1000)
+  {
+    // one second up as per hardware clock
+    start = millis();
+    incrementTime();
+
+    // blink on board LED as a sign that the fish feeder is infact working
+    toggle = !toggle;
+    digitalWrite(led, toggle);   // we get the blink effect as the toggle switches for each second
+
+  }
+
+  printTime();
+  printMoisture();
+}
+
+void printMoisture()
+{
+  myGLCD.invertText(true);
+  myGLCD.print("P-1", 36, 8);
+  myGLCD.print("P-2", 66, 8);
+  myGLCD.invertText(false);
+
+  myGLCD.print("Min:", LEFT, 16);
+  myGLCD.print("Max:", LEFT, 24);
+  myGLCD.print("Avg:", LEFT, 32);
+  myGLCD.print("Now:", LEFT, 40);
+  
+  int value = analogRead(A0);
+  int percent = map(value, 1023, 350, 0, 100);
+  if (percent > 100)
+  {
+    percent = 100;
+  }  
+
+  myGLCD.printNumI(percent, 30, 40, 3);
+  myGLCD.print("%", 48, 40);
+
+  sampleSize++;
+
+  if (percent > m1_Maximum)
+  {
+    m1_Maximum = percent;
+  }
+
+  if (percent < m1_Minimum)
+  {
+    m1_Minimum = percent;
+  }
+
+  m1_Average = (m1_Average * (sampleSize-1) +  percent) / sampleSize;
+
+  myGLCD.printNumI(m1_Minimum, 30, 16, 3);
+  myGLCD.print("%", 48, 16);
+
+  myGLCD.printNumI(m1_Maximum, 30, 24, 3);
+  myGLCD.print("%", 48, 24);
+
+  myGLCD.printNumI(m1_Average, 30, 32, 3);
+  myGLCD.print("%", 48, 32);
+
+  value = analogRead(A1);
+  percent = map(value, 1023, 400, 0, 100);
+  if (percent > 100)
+  {
+    percent = 100;
+  }  
+  myGLCD.printNumI(percent, 60, 40, 3);
+  myGLCD.print("%", 78, 40);
+
+  if (percent > m2_Maximum)
+  {
+    m2_Maximum = percent;
+  }
+
+  if (percent < m2_Minimum)
+  {
+    m2_Minimum = percent;
+  }
+
+  m2_Average = (m2_Average * (sampleSize-1) +  percent) / sampleSize;
+
+  myGLCD.printNumI(m2_Minimum, 60, 16, 3);
+  myGLCD.print("%", 78, 16);
+
+  myGLCD.printNumI(m2_Maximum, 60, 24, 3);
+  myGLCD.print("%", 78, 24);
+
+  myGLCD.printNumI(m2_Average, 60, 32, 3);
+  myGLCD.print("%", 78, 32);
+  
+  myGLCD.update();  
+}
+
+void printTime()
+{
+  myGLCD.print("Time: ", 0, 0);
+  myGLCD.printNumI(h, 36, 0, 2, '0');
+  myGLCD.print(":", 48, 0);
+  myGLCD.printNumI(m, 54, 0, 2, '0');
+  myGLCD.print(".", 66, 0);
+  myGLCD.printNumI(s, 72, 0, 2, '0');
+  myGLCD.update();  
+}
+
+void printWatering()
+{
+    myGLCD.clrScr();
+    myGLCD.print("Watering!", CENTER, 36);
+    myGLCD.update();  
+}
+```
 
 # Results
 
-![Figure-7](/assets/img/gpal/fig-7.png){: .mx-auto.d-block :}
+![Figure-3](/assets/img/dr/fig-3.png){: .mx-auto.d-block :}
 
-# Conparison
+# Comparison
 
-![Figure-8](/assets/img/gpal/fig-8.png){: .mx-auto.d-block :}
+![Figure-4](/assets/img/dr/fig-4.png){: .mx-auto.d-block :}
 
 # Observations
-* Plants grown under infrared light or darkness were yellow and looked more like sprouts than plants, they did not have any leaves
-* Plants grown under white, blue, and ultraviolet light had lush green leaves and could support their weight on their own
-* Light sources used in the experiment were not monochromatic as other colors can be seen under spectroscope
- 
-![Figure-9](/assets/img/gpal/fig-9.png){: .mx-auto.d-block :}
-
-![Figure-10](/assets/img/gpal/fig-10.png){: .mx-auto.d-block :}
+![Figure-5](/assets/img/dr/fig-5.png){: .mx-auto.d-block :}
+![Figure-6](/assets/img/dr/fig-6.png){: .mx-auto.d-block :}
 
 # Conclusions
 ## Drip irrigation provides the best amount of water for unattended watering of potted plants.
 * Drip irrigation: Simple setup, cost-effective, saves water, but it may not be suitable for all types of plants.
-* Periodic watering system: Hard to setup, expensive, and wastes water, but it can be adjusted for all types of plants.
+* Periodic watering system: Hard to set up, expensive, and wastes water, but it can be adjusted for all types of plants.
 * A periodic drip irrigation system could achieve the merits of the periodic watering system and still save water.
 
 # References
