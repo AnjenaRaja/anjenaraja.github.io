@@ -135,7 +135,7 @@ endmodule
 
 ### Constraints Definition
 
-```
+```tcl
 ## Clock signal
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { clk_in }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {clk_in}];
@@ -201,7 +201,7 @@ endmodule
 
 ### Verilog Code for 7-Segment Multiplexer
 
-```
+```verilog
 module seven_seg_mux (
     input clk,                // Clock input
     input reset,              // Reset signal
@@ -286,7 +286,7 @@ endmodule
 
 ### Constraints Definition
 
-```
+```tcl
 ##7 segment display
 set_property -dict { PACKAGE_PIN T10   IOSTANDARD LVCMOS33 } [get_ports { seg[0] }]; #IO_L24N_T3_A00_D16_14 Sch=ca
 set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports { seg[1] }]; #IO_25_14 Sch=cb
