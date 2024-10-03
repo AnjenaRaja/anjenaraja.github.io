@@ -4,7 +4,7 @@ title: Design of SAP-1 Computer using FPGA
 subtitle: Digital Electronics Club Project (Active - Work in progress)
 ---
 
-# Malvino's SAP (Simple-As-Possible) Computer
+# SAP (Simple-As-Possible) Computer
 ## Architecture
 ## Clock 
 The clock on the Nexys A7 development board runs at 100 MHz, which is too fast for our purposes, as our primary focus is to visualize state transitions. To effectively debug the execution, we need to slow the clock down to approximately 1 Hz. Additionally, we want to be able to step through the states manually. 
