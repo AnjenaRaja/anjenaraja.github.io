@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Design of SAP-1 Computer using FPGA
-subtitle: Digital Electronics Club Project
+subtitle: Digital Electronics Club Project (Active - Work in progress)
 ---
-##### (Active - Work in progress)
+
 # Malvino's SAP (Simple-As-Possible) Computer
 ## Architecture
 ## Clock 
