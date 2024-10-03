@@ -36,7 +36,7 @@ subtitle: An Experiment
 # Procedure
 1. Prepare materials and equipment
   * Cardboard boxes with dividers, 10 small plastic bags (air pillows cut in half), wheat grass seeds, soil and water
-  * Equipment needed – Different color light sources (White, Infra Red, Ultra Violet-A, Red, Blue, Green), Electronic circuit for controlling the brightness of the light sources, Cell phone charger, Mains timer and tape measure 
+  * Equipment needed – Different color light sources (White, Infra Red, Ultra Violet-A, Red, Blue, Green), Electronic circuit for controlling the brightness of the light sources, Cell phone charger, Mains timer, and tape measure 
 2. Initial experiment setup
   * Fill 10 plastic bags with adequate soil and plant 5 wheat grass seeds each and water them
   * Place each bag with soil and seeds in one of the divided areas of the cardboard box and make sure that no external light can enter the box
@@ -58,7 +58,7 @@ subtitle: An Experiment
 
 ![Figure-7](/assets/img/gpal/fig-7.png){: .mx-auto.d-block :}
 
-# Conparison
+# Comparison
 
 ![Figure-8](/assets/img/gpal/fig-8.png){: .mx-auto.d-block :}
 
