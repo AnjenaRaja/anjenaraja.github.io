@@ -21,7 +21,7 @@ author: Anjena Raja
 
 navbar-links:
   Projects & Experiments:
-    - SAP-1 CPU design using FPGA: 'sap-1-cpu-fpga'
+    - SAP-1 Computer on FPGA: 'sap-1-cpu-fpga'
     - Laser Communication in Space: "laser-communication-in-space"
     - Human Reaction Time: "human-reaction-time"
     - Growing Plants in Artificial Light: "growing-plants-in-artificial-light"
