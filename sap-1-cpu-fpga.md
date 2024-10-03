@@ -22,4 +22,5 @@ subtitle: Digital Electronics Club Project
 ## Arithmetic and Logic Unit (ALU)
 ## Bus
 ## Control Sequencer
+### Micro Code
 
