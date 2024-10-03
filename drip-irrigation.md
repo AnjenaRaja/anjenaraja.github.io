@@ -4,47 +4,37 @@ title: Watering Plants - Drip Irrigation
 subtitle: An Experiment
 ---
 
-# Does the color of light affect a plant’s growth? Is pink light the best color for plants to grow fast?
-## Dependent Measure: Height of the Plant
-## Independent Variable: Light Color
-
+# Does drip irrigation or periodic watering provide the best amount of water to plants?
 # Hypothesis 
-## I think light's color affects plant growth, and 'white' light is the best for plants to grow fast.
+## Drip irrigation provides the best amount of water for unattended watering of potted plants.
 
-# Theory - Plants and Photosynthesis
-1. Plants use the process of Photosynthesis to prepare food
-2. Photosynthesis depends on the absorption of light by the pigments in their leaves (Chlorophyll-a, Chlorophyll-b, and Beta-Carotene)
-3. The rate of absorption in plants changes with the wavelength of light
-4. Only the Red and Blue ends of the light spectrum are used by most plants during photosynthesis
-5. This is why the color of the leaf is green to our eyes (as it is reflected)
-6. When plants are grown under artificial lights, red and blue colored lights are usually used to save electricity
-
-![Figure-1](/assets/img/gpal/fig-1.png){: .mx-auto.d-block :}
-
-# Theory - Electromagnetic Spectrum
-1. Visible light is a small part of the Electromagnetic Spectrum
-2. Light travels through space as a wave, and the distance between two wave peaks is the wavelength of that beam of light
-3. Wavelength determines the color of the light
-4. A simple homemade spectroscope can help to view the spectrum of incident light
-
-![Figure-0](/assets/img/gpal/fig-0.png){: .mx-auto.d-block :}
-
-![Figure-2](/assets/img/gpal/fig-2.png){: .mx-auto.d-block :}
-
-![Figure-3](/assets/img/gpal/fig-3.png){: .mx-auto.d-block :}
+# Theory
+1. Plant growth factors
+   * **Photosynthesis** - The process of converting energy from light into sugar, in the presence of chlorophyll using carbon dioxide and water
+   * **Respiration** - The process of burning sugars using oxygen to get energy for growth, and life
+   * **Transpiration** - The process of transporting nutrients using water from the soil through roots
+2. Plants need Air (Carbon dioxide and Oxygen), Water, Sunlight, and Nutrients to survive and grow
+3. Potted plans need to be watered regularly to survive
 
 # Procedure
 1. Prepare materials and equipment
-  * Cardboard boxes with dividers, 10 small plastic bags (air pillows cut in half), wheat grass seeds, soil and water
-  * Equipment needed – Different color light sources (White, Infra Red, Ultra Violet-A, Red, Blue, Green), Electronic circuit for controlling the brightness of the light sources, Cell phone charger, Mains timer and tape measure 
-2. Initial experiment setup
-  * Fill 10 plastic bags with adequate soil and plant 5 wheat grass seeds each and water them
-  * Place each bag with soil and seeds in one of the divided areas of the cardboard box and make sure that no external light can enter the box
-  * Make holes for the light sources at the top of the box for each of the divided areas and install the lights
-  * Connect the cell phone charger to the timer and set the timer to be ‘ON’ for 12 hours a day
-3. Monitor the box daily to see whether the seeds germinate and water them if needed
-4. When plants start to germinate, record the height of the plants under each light color using the tape measure in centimeters
-5. Continue to record the height of the plants daily for 10 days and water them if needed
+   * Select two potted plants of the same kind and size
+   * 2 empty 1-gallon milk cans, plastic tubes, small valve, toy pump
+   * Equipment needed – moisture sensor, timer, and kitchen scale
+   * Place the 2 potted plants side by side such that they would get the same amount of sunlight
+2. Drip Irrigation Setup
+   * Fill the milk cans with water, make a small hole in the bottle cap for the tube, and insert the plastic tube through the hole
+   * Place the milk can in an elevated position relative to the pot and adjust the valve such that 20 drops of water flow in 10 minutes
+   * Insert the moisture sensor into the soil
+3. Periodic Watering Setup
+   * Fill the milk cans with water, make a small hole in the bottle cap for the tube, and insert the plastic tube through the hole
+   * Make sure that the pump reaches the bottom of the can
+   * Place the milk can at the same level as the pot
+   * Adjust the timer such that 150 ml of water is delivered by the pump every day (Turn on the pump for about 10 seconds per day)
+4. Allow the 2 watering systems to run for 3 days and adjust the systems if needed until they work reliably
+5. Measure the maximum, minimum, and average moisture levels of the 2 plants daily. Take multiple readings to arrive at the average. Record your observation in a table. In the test setup, the microcontroller took hundreds of readings every minute.
+6. Measure the amount of water dispensed using the kitchen scale. Find the difference in the weight of milk cans between the present and the previous day to calculate the ml of water delivered to the plants. Record your observation in a table. 
+7. Continue the experiment for 21 days.
 
 # Experimental Setup
 
@@ -72,24 +62,25 @@ subtitle: An Experiment
 ![Figure-10](/assets/img/gpal/fig-10.png){: .mx-auto.d-block :}
 
 # Conclusions
-## My hypothesis that white light is the best for plants to grow is correct.
-* Plants can also grow well in Blue, Red, and Red+Blue color lights
-* LED is not an ideal monochromatic light source as I could observe the presence of other colors using the spectroscope.  
-* If only an artificial light source is available, we could use a combination of Red and Blue colors instead of white light to save electrical power.
+## Drip irrigation provides the best amount of water for unattended watering of potted plants.
+* Drip irrigation: Simple setup, cost-effective, saves water, but it may not be suitable for all types of plants.
+* Periodic watering system: Hard to setup, expensive, and wastes water, but it can be adjusted for all types of plants.
+* A periodic drip irrigation system could achieve the merits of the periodic watering system and still save water.
 
 # References
 ## Books
-* Young Scientist – Living World & Plants – World Books
-* The Green Kingdom – Childcraft
-* Help Your Kids with Science  – Dorling Kindersley
-* Young Scientist – Light & Electricity – World Books
-* Practical Electronics for Inventors – Paul Scherz & Simon Monk
+* What do roots, stems, leaves, and flowers do? – Ruth Owen
+* Watering Systems for Lawn & Garden – R. Dodge Woodsen
+* Ortho’s All About Sprinklers and Drip Systems  – Larry Hodgson
+* Water-Conserving Gardens and Landscapes  – John M. O’Keefe
+* Drip Irrigation Guide – Product information guide from DIG Corporation (digicorp.com) 
  
 ## Online Resources
-* Light Absorption for Photosynthesis - hyperphysics.phy-astr.gsu.edu/hbase/Biology/ligabs.html 
-* Electromagnetic Spectrum - en.wikipedia.org/wiki/Electromagnetic_spectrum 
-* How to a CD Spectroscope - exploratorium.edu/snacks/cd-spectroscope 
-* Theory of Light - learn.sparkfun.com/tutorials/light  
-* Artificial Lights to Grow Plants - en.wikipedia.org/wiki/Grow_light
-* LED Constant Current Circuit - learn.sparkfun.com/tutorials/dotbar-display-driver-hookup-guide
+* Plant Growth Factors: Photosynthesis, Respiration, and Transpiration - ext.colostate.edu/mg/gardennotes/141.html 
+* Trickle Irrigation: Using and Conserving Water in the Home Garden - umaine.edu/publications/2160e
+* How Does Water Affect Plant Growth? - gardeningknowhow.com/special/children/how-does-water-affect-plant-growth.htm 
+* Arduino Soil Moisture Sensor along with a Nokia 5110 LCD display - educ8s.tv/arduino-soil-moisture-sensor 
+* Siphon - en.wikipedia.org/wiki/Siphon
+* How centrifugal home water pump works - youtube.com/watch?v=_BAnnTLpros 
+* Arduino Lessons: DC Motors - learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors?view=all 
 
