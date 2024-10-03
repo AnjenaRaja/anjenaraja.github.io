@@ -148,9 +148,9 @@ endmodule
 ## Display
 The development board has 8 seven-segment LEDs, which we would like to use to display the hexadecimal values of various signals such as the Program Counter, the Bus, the Memory Address Register (MAR), the RAM contents pointed to by the MAR, T States, and more.
 
-### 7 Segment LED Display
 We need to decode the hexadecimal values to drive the individual segments of the seven-segment LED displays. Additionally, a multiplexer is required to control each of the seven-segment displays. Since we are relying on persistence of vision, we will use the system clock to refresh the display.
 
+### Verilog Code for 7-Segment Decoder
 ```
 module seven_seg_decoder (
     input [3:0] digit,   // 4-bit input digit (0-15 for hex)
@@ -180,7 +180,10 @@ always @(*) begin
 end
 
 endmodule
+```
 
+### Verilog Code for 7-Segment Multiplexer
+```
 module seven_seg_mux (
     input clk,                // Clock input
     input reset,              // Reset signal
