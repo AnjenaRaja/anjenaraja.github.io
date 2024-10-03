@@ -65,7 +65,7 @@ subtitle: An Experiment
 # Observations
 * Plants grown under infrared light or darkness were yellow and looked more like sprouts than plants, they did not have any leaves
 * Plants grown under white, blue, and ultraviolet light had lush green leaves and could support their weight on their own
-* Light sources used in the experiment were not monochromatic as other colors can be seen under spectroscope
+* Light sources used in the experiment were not monochromatic as other colors can be seen under the spectroscope
  
 ![Figure-9](/assets/img/gpal/fig-9.png){: .mx-auto.d-block :}
 
