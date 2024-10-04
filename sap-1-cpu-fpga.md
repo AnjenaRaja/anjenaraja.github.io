@@ -22,7 +22,7 @@ To achieve this, we need the following:
 5. Reset the clock and the debounce logic.
 6. Drive an LED to indicate the clock pulse.
 
-### Verilog Code for our clock
+### Verilog Code for Clock
 
 ```verilog
 module clock (
