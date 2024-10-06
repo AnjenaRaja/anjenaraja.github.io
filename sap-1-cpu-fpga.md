@@ -211,9 +211,9 @@ endmodule
 
 ## Registers
 
-### Accumulator - A Register
+## Accumulator - A Register
 
-#### Verilog code for A Register
+### Verilog code for A Register
 
 ```verilog
 module a (
@@ -232,9 +232,9 @@ module a (
 endmodule
 ```
 
-### B Register
+## B Register
 
-#### Verilog code for B Register
+### Verilog code for B Register
 
 ```verilog
 module b (
@@ -253,9 +253,9 @@ module b (
 endmodule
 ```
 
-### Memory Address Register (MAR)
+## Memory Address Register (MAR)
 
-#### Verilog code for Memory Address Register (MAR)
+### Verilog code for Memory Address Register (MAR)
 
 ```verilog
 module mar(
@@ -276,9 +276,9 @@ module mar(
 endmodule
 ```
 
-### Instruction Register (IR)
+## Instruction Register (IR)
 
-#### Verilog code for Instruction Register (IR)
+### Verilog code for Instruction Register (IR)
 
 ```verilog
 module ir (
@@ -307,9 +307,9 @@ module ir (
 endmodule
 ```
 
-### Output Register
+## Output Register
 
-#### Verilog code for Output Register
+### Verilog code for Output Register
 
 ```verilog
 module out (
@@ -331,7 +331,7 @@ endmodule
 
 ## Arithmetic and Logic Unit (ALU)
 
-#### Verilog code for Arithmetic and Logic Unit (ALU)
+### Verilog code for Arithmetic and Logic Unit (ALU)
 
 ```verilog
 module alu (
@@ -353,9 +353,9 @@ endmodule
 
 ## Control Sequencer
 
-### Micro Code
+## Micro Code
 
-#### Verilog code for Control Sequencer
+### Verilog code for Control Sequencer
 
 ```verilog
 module controller (
