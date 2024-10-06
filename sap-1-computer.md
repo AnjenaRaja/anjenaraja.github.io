@@ -867,6 +867,7 @@ endmodule
 
 * Digital Computer Electronics Paperback - Albert Malvino And Jerald Brown
 * Learning Digital Design - digilent.com/reference/learn/courses/digital-projects/start
+* Getting Started with Vivado - digilent.com/reference/programmable-logic/guides/getting-started-with-vivado
 * Stacey's Channel - FPGAs for Beginners - youtube.com/@FPGAsforBeginners
 * HDLBits - hdlbits.01xz.net/wiki/Problem_sets
 * Nexys A7 Reference Manual - digilent.com/reference/programmable-logic/nexys-a7/reference-manual
