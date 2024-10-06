@@ -862,3 +862,12 @@ module top(
     
 endmodule
 ```
+
+## References
+
+* Stacey's Channel - FPGAs for Beginners - youtube.com/@FPGAsforBeginners
+* HDLBits - hdlbits.01xz.net/wiki/Problem_sets
+* Digital Computer Electronics Paperback - Albert Malvino And Jerald Brown
+* Austin Morlan's Blog - austinmorlan.com/posts/8bit_breadboard_fpga/
+* ECE 3300 - Digital Circuit Design using Verilog - Prof. Anas Salah Eddin - youtube.com/watch?v=Kt-78I-NUgY&list=PL-iIOnHwN7NXw01eBDR7wI8KzGK4mu8Sr&ab_channel=AnasSalahEddin
+* Nexys A7 Refetence Manual - digilent.com/reference/programmable-logic/nexys-a7/reference-manual
