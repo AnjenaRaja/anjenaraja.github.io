@@ -95,6 +95,21 @@ module clock (
 endmodule
 ```
 
+### Constraints Definition
+
+```tcl
+## Clock signal
+set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { clk_in }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
+create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {clk_in}];
+##Switches
+set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { mode_switch }]; #IO_L21P_T3_DQS_14 Sch=sw[15]
+## LEDs
+set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { clk_led }]; #IO_L21N_T3_DQS_A06_D22_14 Sch=led[15]
+##Buttons
+set_property -dict { PACKAGE_PIN M18   IOSTANDARD LVCMOS33 } [get_ports { step_button }]; #IO_L4N_T0_D05_14 Sch=btnu
+set_property -dict { PACKAGE_PIN P17   IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L12P_T1_MRCC_14 Sch=btnl
+```
+
 ### Verilog Code for Debouncing Switches
 
 ```verilog
@@ -133,21 +148,6 @@ module debounce (
     end
 
 endmodule
-```
-
-### Constraints Definition
-
-```tcl
-## Clock signal
-set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { clk_in }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
-create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {clk_in}];
-##Switches
-set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { mode_switch }]; #IO_L21P_T3_DQS_14 Sch=sw[15]
-## LEDs
-set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { clk_led }]; #IO_L21N_T3_DQS_A06_D22_14 Sch=led[15]
-##Buttons
-set_property -dict { PACKAGE_PIN M18   IOSTANDARD LVCMOS33 } [get_ports { step_button }]; #IO_L4N_T0_D05_14 Sch=btnu
-set_property -dict { PACKAGE_PIN P17   IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L12P_T1_MRCC_14 Sch=btnl
 ```
 
 ## Program Counter
