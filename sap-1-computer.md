@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SAP-1 Computer on FPGA
+title: SAP-1 Computer
 subtitle: Digital Electronics Club Project (Active - Work in progress)
 ---
 
