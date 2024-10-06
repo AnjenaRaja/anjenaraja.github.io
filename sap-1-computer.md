@@ -245,6 +245,7 @@ The memory module simulates the RAM (Random Access Memory) in the SAP-1 architec
 ### Inputs and Outputs
 #### Inputs:
 * address: A 4-bit address input that specifies which memory location to access. Since it's a 4-bit address, there are 16 possible memory locations (2^4 = 16).
+
 #### Outputs:
 * data_out: An 8-bit output that provides the data stored at the given address. This data could represent either an instruction (for the CPU to execute) or data to be used in a computation.
 ### Functionality
