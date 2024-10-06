@@ -248,7 +248,9 @@ The memory module simulates the RAM (Random Access Memory) in the SAP-1 architec
 
 #### Outputs:
 * data_out: An 8-bit output that provides the data stored at the given address. This data could represent either an instruction (for the CPU to execute) or data to be used in a computation.
+
 ### Functionality
+
 #### Memory Array
 The memory is defined as a 16-byte array (ram), where each location holds 8 bits of data. This memory holds both the program instructions and data used by the processor. The memory is initialized with both instructions and data values at specific addresses.
 
@@ -263,8 +265,10 @@ The memory is defined as a 16-byte array (ram), where each location holds 8 bits
   * ram[13] = 8'b00000010; — Stores the value 2.
   * ram[14] = 8'b00000110; — Stores the value 6.
   * ram[15] = 8'b00000101; — Stores the value 5.
+
 #### Output Logic
 Memory Access: Whenever the CPU provides an address via the address input, the module outputs the corresponding data via data_out. This is done using the line:
+
 ``` verilog
 data_out = ram[address];
 ```
