@@ -197,6 +197,20 @@ endmodule
 ```
 
 ## Program Counter
+### Overview
+The Program Counter (PC) is a critical component in any CPU, including the SAP-1 architecture. Its role is to keep track of the address of the next instruction to be executed. In this case, the PC is a 4-bit counter, which means it can store values from 0 to 15 (in binary, 4 bits). Each time the clock signal (clk) ticks, the PC can either increment by 1 or reset to 0 if needed.
+
+### Inputs and Outputs
+#### Inputs:
+* clk: The clock signal, which controls when the PC updates.
+* reset: A signal to reset the PC to 0.
+* inc: An increment signal. When inc is high, the PC increments by 1.
+#### Output:
+* pc_out: The 4-bit output value of the Program Counter. It holds the current address of the next instruction.
+### Functionality
+#### Reset and Increment
+* Reset (reset): When the reset signal is active (1), the PC is reset to 0. This ensures that the Program Counter starts from the first instruction of the program, typically during initialization or when a system reset is triggered.
+* Increment (inc): The inc signal is used to increment the PC. When inc is active (1), the PC increases by 1 on each rising edge of the clock (clk), but only if the current PC value is less than 15 (4'b1111). This prevents the counter from overflowing since it is only 4 bits wide. Once it reaches 15, it will stop incrementing.
 
 ### Verilog Code for Program Counter
 
