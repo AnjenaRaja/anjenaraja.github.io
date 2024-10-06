@@ -267,12 +267,7 @@ The memory is defined as a 16-byte array (ram), where each location holds 8 bits
   * ram[15] = 8'b00000101; — Stores the value 5.
 
 #### Output Logic
-Memory Access: Whenever the CPU provides an address via the address input, the module outputs the corresponding data via data_out. This is done using the line:
-
-``` verilog
-data_out = ram[address];
-```
-The data_out register is updated with the data stored at the given address in the memory array.
+Memory Access: Whenever the CPU provides an address via the address input, the module outputs the corresponding data via data_out. The data_out register is updated with the data stored at the given address in the memory array.
 
 ### Key Points
 * Memory Initialization: The initial block pre-loads the memory with both instructions and data before the simulation or operation starts. This is useful for testing and running small programs within the SAP-1 CPU.
