@@ -212,6 +212,14 @@ The Program Counter (PC) is a critical component in any CPU, including the SAP-1
 * Reset (reset): When the reset signal is active (1), the PC is reset to 0. This ensures that the Program Counter starts from the first instruction of the program, typically during initialization or when a system reset is triggered.
 * Increment (inc): The inc signal is used to increment the PC. When inc is active (1), the PC increases by 1 on each rising edge of the clock (clk), but only if the current PC value is less than 15 (4'b1111). This prevents the counter from overflowing since it is only 4 bits wide. Once it reaches 15, it will stop incrementing.
 
+### Key Points
+* Clock Signal (clk): The Program Counter updates on every rising edge of the clock signal. This is typical in digital circuits to ensure that updates occur synchronously with the clock.
+* Reset Mechanism: The pc_out is set to 0 whenever the reset signal is active. This ensures that the counter starts from the beginning of the program execution or when a reset is required.
+* Conditional Increment: The Program Counter only increments if the inc signal is high and the current value of pc_out is less than 15 (4'b1111). This guarantees that the PC does not overflow past its 4-bit limit, ensuring it stays within the range 0-15.
+
+### Application in SAP-1
+In the SAP-1 architecture, the Program Counter is essential for stepping through instructions stored in memory. Each instruction is fetched from memory using the current value of the Program Counter (pc_out), which is then incremented to point to the next instruction. The ability to reset and control the PC makes it easier to manage program flow during execution, particularly when debugging or running test programs.
+
 ### Verilog Code for Program Counter
 
 ```verilog
