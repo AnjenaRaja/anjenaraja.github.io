@@ -239,6 +239,43 @@ endmodule
 ```
 
 ## Memory (RAM)
+### Overview
+The memory module simulates the RAM (Random Access Memory) in the SAP-1 architecture. In this design, the memory holds the program instructions and data that the CPU will execute. It has 16 addresses, each storing 8 bits of data, which is typical for small, simple processors like the SAP-1. This module is essential for storing both the program instructions and the data that the CPU will process.
+
+### Inputs and Outputs
+#### Inputs:
+* address: A 4-bit address input that specifies which memory location to access. Since it's a 4-bit address, there are 16 possible memory locations (2^4 = 16).
+#### Outputs:
+* data_out: An 8-bit output that provides the data stored at the given address. This data could represent either an instruction (for the CPU to execute) or data to be used in a computation.
+### Functionality
+#### Memory Array
+The memory is defined as a 16-byte array (ram), where each location holds 8 bits of data. This memory holds both the program instructions and data used by the processor. The memory is initialized with both instructions and data values at specific addresses.
+
+* Instructions: These are the first few locations in memory (addresses 0 to 4). They form a small example program that the CPU can execute:
+  * ram[0] = 8'b00011110; — Load the value from memory location 14 (LDA 14).
+  * ram[1] = 8'b00101111; — Add the value from memory location 15 (ADD 15).
+  * ram[2] = 8'b00111101; — Subtract the value from memory location 13 (SUB 13).
+  * ram[3] = 8'b01000000; — Output the result to the output register (OUT).
+  * ram[4] = 8'b11110000; — Halt the CPU (HLT).
+* NOP (No Operation): The program includes several NOPs (No Operation), which are instructions that do nothing. These are placeholders in memory locations 5 to 12.
+* Data: Memory locations 13, 14, and 15 store the data used by the program:
+  * ram[13] = 8'b00000010; — Stores the value 2.
+  * ram[14] = 8'b00000110; — Stores the value 6.
+  * ram[15] = 8'b00000101; — Stores the value 5.
+#### Output Logic
+Memory Access: Whenever the CPU provides an address via the address input, the module outputs the corresponding data via data_out. This is done using the line:
+``` verilog
+data_out = ram[address];
+```
+The data_out register is updated with the data stored at the given address in the memory array.
+
+### Key Points
+* Memory Initialization: The initial block pre-loads the memory with both instructions and data before the simulation or operation starts. This is useful for testing and running small programs within the SAP-1 CPU.
+* Program Structure: The program consists of a series of instructions (like LDA, ADD, SUB, OUT, and HLT) that the CPU will execute in sequence. These instructions manipulate the data stored in other memory locations.
+* Simple Addressing: The memory uses a 4-bit address (address), which allows the CPU to access any of the 16 memory locations. Each memory location holds an 8-bit value (data_out).
+
+### Application in SAP-1
+In the SAP-1 architecture, this memory module is used to store both the program instructions and the data the CPU needs to process. The Program Counter (PC) provides the memory address to this module, which in turn outputs the corresponding instruction or data. This is an essential part of how the CPU fetches and executes instructions from memory.
 
 ### Verilog Code for Memory
 
