@@ -9,18 +9,64 @@ subtitle: Digital Electronics Club Project (Active - Work in progress)
 ## Architecture
 
 ## Clock 
-The clock on the Nexys A7 FPGA development board runs at 100 MHz, which is too fast for our purposes, as our primary focus is to visualize state transitions. To effectively debug the execution, we need to slow the clock down to approximately 1 Hz. Additionally, we want to be able to step through the states manually. 
+### Overview
+The Nexys A7 FPGA development board operates with a clock running at 100 MHz, which is too fast for us to meaningfully observe the state transitions in a simple SAP-1 architecture. Our goal is to slow the clock down to about 1 Hz so that we can visually track the state transitions. Furthermore, to assist in debugging and execution analysis, we need the ability to step through states manually.
 
-We can use one of the 16 slide switches available on the development board to toggle between the automatic slow clock and manual clock modes. Additionally, we can assign one of the push buttons to manually advance the clock. However, since these are mechanical switches, sliding the switch or pressing the button may produce noisy signals, which the FPGA could misinterpret as multiple transitions. Therefore, we need to debounce the switch transitions to ensure reliable operation.
+To accomplish this, we use the following key features on the development board:
 
-To achieve this, we need the following:
+1. 16 slide switches – One of these switches is dedicated to toggling between automatic slow clock mode and manual step mode.
+2. Push button – This button is used to manually advance the clock when in single-step mode.
+3. LED – We use an LED to indicate the clock pulse, allowing for visual confirmation of the clock's operation.
+Since mechanical switches and buttons tend to produce noisy signals due to bouncing (brief unintended transitions), we implement debouncing to ensure reliable and stable clock control.
 
-1. Slow down the system clock.
-2. Advance the clock with a button press.
-3. Switch between the automatic slow clock and manual clock control.
-4. Halt the clock when our computer completes its program.
-5. Reset the clock and the debounce logic.
-6. Drive an LED to indicate the clock pulse.
+### Key Requirements
+1. Slow the system clock: The 100 MHz clock is slowed down to 1 Hz using a clock divider, so that each state transition occurs every second.
+2. Manually advance the clock: In manual mode, we use a push button to advance the clock.
+3. Switch between automatic and manual clock modes: A slide switch toggles between the two modes.
+4. Halt the clock: A halt signal is used to stop the clock when the program completes.
+5. Reset the clock and debounce logic: The reset signal restores the clock to its default state and clears any pending signals.
+6. Visual clock pulse: An LED is driven by the clock signal to provide a visual cue of clock activity.
+
+### Inputs and Outputs
+#### Inputs:
+
+* clk_in: 100 MHz input clock from the Nexys A7 FPGA board.
+* reset: A reset signal to reset the clock and debounce logic.
+* mode_switch: A slide switch to select between automatic (slow clock) and manual (step-by-step) modes.
+* step_button: A push button to manually step through the clock in manual mode.
+* halt: A flag to stop the clock when the program execution is complete.
+
+#### Output:
+
+* clk_out: The output clock signal, either slowed down or advanced manually.
+
+### Internal Signals and Registers
+
+* DIVISOR: A parameter set to 50,000,000, which divides the 100 MHz clock to approximately 1 Hz.
+debounced_step_button and debounced_mode_switch: Debounced signals from the button and slide switch, ensuring clean transitions.
+* counter: A 32-bit counter used for clock division to achieve the slower clock frequency.
+* slow_clk: A slow clock signal that toggles at 1 Hz.
+* button_state_prev: Used to store the previous state of the step button for edge detection.
+
+### Debouncing the Button and Switch
+Mechanical switches and buttons often produce multiple, unintended transitions due to bouncing. Without debouncing, the FPGA could interpret a single press as multiple presses, causing unreliable behavior. To prevent this, we use a debounce module to filter out the noise.
+
+The debounce module uses a parameter DEBOUNCE_TIME to define the time required to stabilize the signal, ensuring only one clean transition is registered when a button is pressed or a switch is toggled.
+
+### Clock Divider for Slow Clock Mode
+The input clock (clk_in) runs at 100 MHz, which is too fast for observing state transitions. To slow this down, we use a clock divider that counts clock cycles and toggles the clock output (slow_clk) when the count reaches DIVISOR - 1. This produces a clock signal that runs at 1 Hz, meaning each clock pulse occurs every second.
+
+### Clock Output Logic
+The clock output logic determines whether the system is in single-step mode or slow clock mode:
+
+* Single-Step Mode: When the mode_switch is high, the system waits for a button press to advance the clock. The clock only toggles on the rising edge of the step_button.
+* Slow Clock Mode: When the mode_switch is low, the clock toggles automatically based on the slower clock (slow_clk) generated by the clock divider.
+
+### Reset and Halt Functionality
+The reset signal is used to restore the clock to its initial state and clear any pending signals. The halt flag allows us to stop the clock when the system needs to halt, such as when the computer completes its program.
+
+### Visual Clock Pulse
+To provide a visual indication of the clock pulse, we can connect an LED to the clk_out signal. This allows us to visually observe each clock pulse, making it easier to follow the clock transitions in real time.
 
 ### Verilog Code for Clock
 
