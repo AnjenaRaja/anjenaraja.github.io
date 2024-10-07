@@ -12,6 +12,8 @@ subtitle: Digital Electronics Club Project (Active - Work in progress)
 ### Overview
 The Nexys A7 FPGA development board operates with a clock running at 100 MHz, which is too fast for us to meaningfully observe the state transitions in a simple SAP-1 architecture. Our goal is to slow the clock down to about 1 Hz so that we can visually track the state transitions. Furthermore, to assist in debugging and execution analysis, we need the ability to step through states manually.
 
+![Figure-1](/assets/img/sap1/fig-1.png){: .mx-auto.d-block :}
+
 To accomplish this, we use the following key features on the development board:
 
 1. 16 slide switches – One of these switches is dedicated to toggling between automatic slow clock mode and manual step mode.
