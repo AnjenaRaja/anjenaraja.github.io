@@ -587,6 +587,50 @@ endmodule
 
 ## Output Register
 
+### Overview
+The Output Register (OUT) in the SAP-1 architecture is responsible for holding and displaying the result of computations performed by the CPU. It stores an 8-bit value and outputs it to a display device (e.g., LEDs or a seven-segment display). The value in the output register remains constant until a new value is loaded, which allows the system to visualize the result of the executed instructions.
+
+### Inputs and Outputs
+* Inputs:
+  * clk: The clock signal to synchronize the register's operations.
+  * reset: A signal to reset the output register to zero.
+  * load: A control signal that, when high, loads new data into the output register.
+  * data_in: The 8-bit input data to be loaded into the output register.
+
+* Outputs:
+  * data_out: The 8-bit output representing the value stored in the output register. This value is displayed or sent to an external device.
+
+### Functionality
+The Output Register (OUT) takes an 8-bit input (data_in) and stores it in the register when the load signal is high. This stored value is continuously output as data_out, providing the final result of the computation or operation. The output remains unchanged until new data is loaded into the register.
+
+#### Reset Behavior
+* If the reset signal is high during a clock cycle, the output (data_out) is cleared to 0. This ensures that the output register starts from a known state when the system is reset.
+
+#### Load Data Behavior
+* If the load signal is high during a clock cycle, the 8-bit data_in is stored in the output register, and this value is subsequently available on the data_out output.
+
+### Key Points
+1. Reset Functionality:
+  * When the reset signal is high, the data_out is cleared to 0. This ensures that the output register is in a known state when the system is reset, and no stale data is left in the register.
+2. Data Loading:
+  * When the load signal is high, the 8-bit data_in is stored in the data_out register. This value is then available for display or output, making it visible on the LEDs or connected display devices.
+  * The loaded value remains on the data_out output until another load operation or a reset occurs.
+3. Clock-Synchronized Operation:
+  * The register updates only on the rising edge of the clock (clk). This ensures that the output register's operation is synchronized with the rest of the system, and that new values are loaded at the correct time within the CPU's clock cycle.
+
+### Application in SAP-1
+In the SAP-1 architecture, the Output Register (OUT) holds the result of arithmetic and logic operations. After a computation, the value from the accumulator (A) or other registers is transferred to the output register to be displayed.
+
+For example:
+* After performing an ADD or SUB operation, the result in the accumulator can be loaded into the output register for visualization.
+* The system’s external components, such as a display, will show the value stored in the output register, allowing the user to see the result of the executed instruction.
+
+### Example Workflow
+1. Reset: The system is reset, clearing the output register (data_out = 0).
+2. Operation Execution: The CPU performs a series of operations, and the result is available as data_in.
+3. Load New Data: When the load signal is high, the value of data_in is loaded into the output register, updating data_out.
+4. Output Display: The data_out value remains constant and is displayed on the connected device until a new value is loaded or a reset occurs.
+
 ### Verilog code for Output Register
 
 ```verilog
