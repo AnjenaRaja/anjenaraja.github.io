@@ -727,11 +727,90 @@ module alu (
 endmodule
 ```
 
-## Bus
-
 ## Control Sequencer
+### Overview
+The controller module in the SAP-1 (Simple as Possible) architecture is responsible for generating the control signals based on the opcode and the T-state of the system. These control signals dictate the actions of other components (such as the program counter, memory, and registers) at specific stages of an instruction cycle.
 
-## Micro Code
+### Inputs and Outputs
+* Inputs:
+  * clk: The system clock that drives the T-states and control sequence.
+  * reset: A signal to reset the state machine, bringing it back to the initial state.
+  * opcode: A 4-bit opcode that represents the current instruction to be executed.
+
+* Outputs:
+  * cs: A 13-bit wide output representing the control signals for the entire system.
+  * tstate: A 3-bit value representing the current T-state (machine cycle step).
+
+### Supported Instructions (Opcodes)
+The following instructions are defined for this controller:
+* NOP: No operation (reset state).
+* LDA: Load data into register A.
+* ADD: Add data to register A.
+* SUB: Subtract data from register A.
+* OUT: Output data from register A.
+* HLT: Halt the program.
+
+These opcodes are mapped to 4-bit values to identify the instruction in the system.
+
+### Control Signals:
+The module generates 13 control signals for various operations in the SAP-1 architecture, each controlling specific actions such as enabling components, loading data, and controlling the ALU:
+
+Control signals include:
+* LOAD_OUT: Load data into the output register.
+* HALT: Stop the clock, halting the system.
+* INC_PC: Increment the program counter.
+* EN_PC: Enable the program counter to place its address on the bus.
+* LOAD_MAR: Load the memory address register (MAR) with data from the bus.
+* EN_RAM: Enable the memory to place its data onto the bus.
+* LOAD_IR: Load the instruction register (IR) with data from the bus.
+* EN_IR: Enable the instruction register (IR) to place its address onto the bus.
+* LOAD_A: Load register A with data from the bus.
+* EN_A: Enable register A to place its data on the bus.
+* LOAD_B: Load register B with data from the bus.
+* SUB_ALU: Signal the ALU to perform subtraction.
+* EN_ALU: Enable the ALU to place its result on the bus.
+
+### T-State Breakdown
+The T-state represents the microcode execution phase, breaking down each instruction into smaller steps. The controller moves through six T-states (0 through 5), controlling different actions at each step. These steps ensure that the instruction is fetched, decoded, and executed in sequence.
+
+* T-State 0: Fetch the instruction from memory by loading the MAR with the address from the program counter (PC).
+* T-State 1: Increment the PC so that it points to the next instruction.
+* T-State 2: Load the instruction into the instruction register (IR).
+* T-State 3-5: Execute the current instruction based on the opcode.
+
+Each instruction has its specific control signals asserted during these T-states.
+
+### Control Signal Generation Based on Opcode
+In T-states 3-5, the controller acts based on the current instruction (as identified by the opcode). The following logic is applied:
+* NOP (No Operation): No action is performed during T-states 3-5.
+* LDA (Load A):
+  * T-State 3: Load the memory address into MAR.
+  * T-State 4: Load the data from memory into register A.
+* ADD:
+  * T-State 3: Load the memory address into MAR.
+  * T-State 4: Load the data from memory into register B.
+  * T-State 5: Add the contents of A and B, storing the result in A.
+* SUB:
+  * T-State 3: Load the memory address into MAR.
+  * T-State 4: Load the data from memory into register B.
+  * T-State 5: Subtract the contents of B from A, storing the result in A.
+* OUT:
+  * T-State 3: Load the contents of register A into the output register.
+* HLT: Halt the system and stop the clock.
+
+### Example of Operation:
+For the ADD instruction:
+1. T-State 0: The program counter places the current address on the bus, and the MAR loads this address.
+2. T-State 1: The program counter is incremented.
+3. T-State 2: The instruction is fetched from memory and placed in the IR.
+4. T-State 3: The IR places the memory address of the operand on the bus, and the MAR loads it.
+5. T-State 4: The operand is fetched from memory and loaded into register B.
+6. T-State 5: The ALU adds the contents of A and B, placing the result back in register A.
+
+### Control Word (CW) Assembly
+The control word (cw) is a 13-bit register that assembles the control signals for each T-state and opcode. For every clock cycle, it dictates which operations are performed by asserting or de-asserting the control signals.
+
+The controller module plays a central role in orchestrating the actions of the SAP-1 system by breaking down instructions into smaller steps using a combination of T-states and control signals. This enables the proper sequencing of memory fetches, arithmetic operations, and control flow, such as halting the system. The modular design allows flexibility in expanding or modifying control signals for different or more complex instructions.
 
 ### Verilog code for Control Sequencer
 
