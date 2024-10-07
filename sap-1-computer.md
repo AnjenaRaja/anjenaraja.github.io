@@ -207,8 +207,10 @@ The Program Counter (PC) is a critical component in any CPU, including the SAP-1
 * clk: The clock signal, which controls when the PC updates.
 * reset: A signal to reset the PC to 0.
 * inc: An increment signal. When inc is high, the PC increments by 1.
+
 #### Output:
 * pc_out: The 4-bit output value of the Program Counter. It holds the current address of the next instruction.
+
 ### Functionality
 #### Reset and Increment
 * Reset (reset): When the reset signal is active (1), the PC is reset to 0. This ensures that the Program Counter starts from the first instruction of the program, typically during initialization or when a system reset is triggered.
