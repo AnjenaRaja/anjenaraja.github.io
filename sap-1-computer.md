@@ -442,6 +442,47 @@ endmodule
 
 ## Memory Address Register (MAR)
 
+### Overview
+The Memory Address Register (MAR) in the SAP-1 architecture holds the address of the memory location that is currently being accessed. It is a critical component in the fetch-decode-execute cycle, responsible for pointing to the next instruction or data in memory. The MAR ensures that the correct address is supplied to the memory during read or write operations.
+
+### Inputs and Outputs
+
+* Inputs:
+  * clk: The clock signal that drives the register’s operations.
+  * reset: A signal to reset the register's output to zero.
+  * load: A control signal that, when high, allows the register to load a new memory address.
+  * address_in: The 4-bit address input to be loaded into the register.
+* Outputs:
+  * address_out: The 4-bit address output, representing the current memory address stored in the MAR.
+
+### Functionality
+The Memory Address Register (MAR) is a simple register that holds a 4-bit address used to point to a memory location. The MAR loads the new address from the address_in input when the load signal is high and can be reset to zero using the reset signal. This register plays a vital role in accessing instructions or data stored in memory.
+
+#### Reset Behavior
+* If the reset signal is high during a clock cycle, the MAR output (address_out) is immediately set to 0. This clears the memory address, ensuring that the system starts fresh during reset.
+
+#### Load Address Behavior
+* If the reset signal is not active and the load signal is high, the MAR loads the value from address_in into address_out on the rising edge of the clock. This address is then used to access a memory location in the next step of the instruction cycle.
+
+### Key Points
+1. Reset Functionality:
+  * When the reset signal is high, the register output address_out is cleared to 0 on the rising edge of the clock. This is useful when restarting the program or resetting the system.
+2. Address Load Control:
+  * The load signal controls when the new memory address from address_in is loaded into address_out.
+  * When load is high during a clock cycle, the address from address_in is transferred to address_out, and this address is used to access the appropriate memory location.
+3. Clock-Synchronized Operation:
+  * The register is edge-triggered, meaning that it updates its value only on the rising edge of the clock (clk).
+  * This ensures that the operations are synchronized with the rest of the system, ensuring proper timing in the CPU's fetch-decode-execute cycle.
+
+### Application in SAP-1
+In the SAP-1 architecture, the Memory Address Register (MAR) is used to hold the address of the memory location being accessed for fetching instructions or data. During the fetch stage of the instruction cycle, the MAR is loaded with the next instruction address. The address stored in the MAR is used to retrieve the instruction from memory, which is then executed by the CPU.
+
+For example:
+* During the fetch phase, the program counter (PC) provides the address of the next instruction. This address is loaded into the MAR.
+* The memory module uses the address from the MAR to retrieve the instruction from memory.
+
+The MAR is essential for addressing memory locations and plays a key role in ensuring that instructions are fetched and executed in the correct order.
+
 ### Verilog code for Memory Address Register (MAR)
 
 ```verilog
