@@ -656,6 +656,58 @@ endmodule
 ```
 
 ## Arithmetic and Logic Unit (ALU)
+### Overview
+The Arithmetic Logic Unit (ALU) in the SAP-1 architecture is responsible for performing arithmetic operations on two 8-bit input values: a and b. Specifically, this ALU performs addition or subtraction based on a control signal. It is a simple ALU that handles two's complement subtraction and unsigned addition.
+
+### Inputs and Outputs
+* Inputs:
+  * a: The first 8-bit input to the ALU.
+  * b: The second 8-bit input to the ALU.
+  * sub: A control signal that determines whether the ALU performs addition or subtraction. If sub = 1, the ALU performs subtraction (a - b). If sub = 0, it performs addition (a + b).
+
+* Output:
+  * result: The 8-bit result of the operation, either the sum or the difference of a and b.
+
+### Functionality
+The ALU module performs one of two operations:
+
+1. Addition: When the sub signal is low (0), the ALU adds the two 8-bit inputs (a + b), and the result is stored in result.
+2. Subtraction: When the sub signal is high (1), the ALU subtracts b from a (a - b), and the result is stored in result.
+
+The ALU does not handle overflow detection, and it treats both addition and subtraction as unsigned operations.
+
+### Key Points
+1. Addition and Subtraction:
+  * The ALU performs addition when the sub signal is 0, meaning it calculates result = a + b.
+  * It performs subtraction when the sub signal is 1, meaning it calculates result = a - b. The subtraction is done in two's complement, ensuring correct results even when b is larger than a for signed operations.
+2. Combinational Logic:
+  * The ALU is a combinational circuit, meaning the result is calculated immediately based on the current values of the inputs (a, b, and sub). The result is always updated as soon as any of the inputs change.
+3. Unsigned Operations:
+  * This ALU does not handle signed numbers directly. It performs operations assuming that the inputs are unsigned, and no overflow detection is included. However, it can work correctly for two's complement numbers in both addition and subtraction modes.
+4. Control Signal:
+  * The sub signal is the control input for the ALU. If sub = 0, the ALU performs addition; if sub = 1, it performs subtraction. This simple approach allows the ALU to handle both operations with minimal logic.
+
+### Application in SAP-1
+In the SAP-1 architecture, the ALU is used to perform basic arithmetic operations such as addition and subtraction. These operations are essential for performing calculations based on instructions like ADD and SUB in the instruction set.
+
+For example:
+* The ADD instruction takes two values (from registers or memory) and adds them together using the ALU. The result is then stored in the accumulator or other registers.
+* The SUB instruction subtracts one value from another, and the result is also stored.
+
+### Example Workflow
+1. Addition Operation:
+  * Inputs: a = 8'b00000101 (5), b = 8'b00000011 (3), and sub = 0 (addition).
+  * The ALU will compute a + b = 5 + 3 = 8, and store 8 in the result.
+2. Subtraction Operation:
+  * Inputs: a = 8'b00000101 (5), b = 8'b00000011 (3), and sub = 1 (subtraction).
+  * The ALU will compute a - b = 5 - 3 = 2, and store 2 in the result.
+
+### Example in SAP-1
+The ALU can be used for the following operations in the SAP-1 system:
+* ADD: The ALU adds the values in registers or memory and stores the result.
+* SUB: The ALU subtracts one value from another and stores the result.
+
+These operations are essential for performing calculations during program execution.
 
 ### Verilog code for Arithmetic and Logic Unit (ALU)
 
