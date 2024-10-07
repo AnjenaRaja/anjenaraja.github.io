@@ -1214,6 +1214,60 @@ set_property -dict { PACKAGE_PIN U13   IOSTANDARD LVCMOS33 } [get_ports { anode[
 
 ## SAP Computer
 
+This top-level module implements a system that drives multiple components, including a CPU clock, memory, program counter, and displays relevant output on a 7-segment display. It integrates various submodules like the program counter (PC), memory address register (MAR), memory (RAM), arithmetic logic unit (ALU), and control signals.
+
+### Inputs and Outputs
+* Inputs:
+  * clk_in: 100 MHz input clock from the Nexys A7-100T board.
+  * reset: Resets the system.
+  * mode_switch: Toggles between single-step mode and slow clock mode.
+  * step_button: Advances the system by one step in single-step mode.
+* Outputs:
+  * clk_led: Displays the current clock state on an LED.
+  * seg: Controls the 7-segment display's segments.
+  * dp: Controls the decimal point on the 7-segment display (set to always off here).
+  * anode: Controls which of the 8 digits on the 7-segment display is active.
+  * cs_led: 13 control signals displayed on LEDs.
+
+### Key Features:
+1. Clock Module:
+* The clock_inst generates a clock (clk) from the input clock (clk_in) and provides single-step functionality. It uses the mode_switch and step_button for selecting the clock mode.
+* The output clock (clk) is fed to the rest of the components and also connected to the clk_led for visualization.
+2. Common Bus:
+* An 8-bit bus (bus) is shared between various components, such as the ALU, memory, program counter, and registers. The always @(*) block multiplexes the bus based on which component has control.
+3. Program Counter (PC):
+* The pc_inst manages the program counter (pc_out) and increments the PC when signaled by pc_inc.
+4. Memory Address Register (MAR):
+* The mar_inst holds the current memory address (mar_out). It loads the address from the bus when mar_load is asserted.
+5. Memory (RAM):
+* The memory_instance accesses memory based on the address from the MAR (mar_out). The memory output (mem_out) is connected to the bus and displayed on the 7-segment display.
+6. Registers and ALU:
+* The a_inst and b_inst are 8-bit registers used as inputs to the ALU.
+* The alu_inst performs arithmetic or logical operations based on inputs from the A and B registers. It supports subtraction via the alu_sub signal.
+* The ALU output (alu_out) is connected to the bus when alu_en is asserted.
+7. Instruction Register (IR):
+* The ir_inst holds the current instruction, split into opcode and operand. It loads the instruction from the bus and enables or disables outputs using the ir_en and ir_load signals.
+8. Control Signals (CS):
+* The cs_led is connected to 13 control signals that reflect the state of key operations like enabling the ALU, loading registers, incrementing the PC, and halting the CPU.
+9. Display:
+* The 7-segment display is driven by the seven_seg_display module. It shows:
+  * The program counter (pc_out),
+  * Time state (t_state),
+  * Bus data,
+  * Memory output,
+  * The final output from the out_inst register.
+* The dp (decimal point) is permanently disabled.
+
+### Final Output on the 7-Segment Display:
+The 32-bit disp_value is organized as follows:
+* PC (pc_out) is displayed on the 8th digit.
+* T-state (t_state) is displayed on the 7th digit.
+* Bus data is displayed on the 6th and 5th digits.
+* Memory output (mem_out) is displayed on the 4th and 3rd digits.
+* Output register (out_out) is displayed on the 2nd and 1st digits.
+
+This module effectively ties together a simple CPU system, handling clock signals, memory, instruction execution, and outputting information to the 7-segment display and LEDs. The key signals are visually represented for debugging and display purposes, making it useful for educational or small embedded system applications.
+
 ### Verilog Code for SAP Computer
 
 ```verilog
