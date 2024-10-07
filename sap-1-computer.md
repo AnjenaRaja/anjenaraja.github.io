@@ -994,6 +994,41 @@ The development board has 8 seven-segment LEDs, which we would like to use to di
 
 We need to decode the hexadecimal values to drive the individual segments of the seven-segment LED displays. Additionally, a multiplexer is required to control each of the seven-segment displays. Since we are relying on persistence of vision, we will use the system clock to refresh the display.
 
+## 7-Segment Decoder
+A 7-segment display decoder converts a 4-bit binary number into signals that can light up the appropriate segments of a 7-segment display to show digits from 0 to F (hexadecimal). Here’s an explanation of its components:
+
+### Inputs and Outputs:
+* Inputs
+  * digit: A 4-bit input representing a hexadecimal digit (0-15).
+* Outputs
+  * seg: A 7-bit output where each bit corresponds to one of the segments (A-G) of the display. The bits are:
+    * seg[6]: Segment A
+    * seg[5]: Segment B
+    * seg[4]: Segment C
+    * seg[3]: Segment D
+    * seg[2]: Segment E
+    * seg[1]: Segment F
+    * seg[0]: Segment G
+
+Each bit is active low, meaning that a 0 lights up the corresponding segment, and a 1 turns it off.
+
+### Functionality:
+The decoder uses a case statement to map each 4-bit input (digit) to the correct 7-bit output (seg). The binary output patterns represent which segments of the display should be lit up to show the corresponding digit.
+
+#### Example Mapping:
+* For digit = 4'd0 (binary 0000), the output is 7'b1000000, which lights up segments A, B, C, D, E, and F to display 0.
+* For digit = 4'd1 (binary 0001), the output is 7'b1111001, lighting up segments B and C to display 1.
+* For digit = 4'd10 (binary 1010), the output is 7'b0001000, which lights up segments A, B, C, E, and F to display A in hexadecimal.
+
+The default case (when an invalid input is given) turns off all segments by setting the output to 7'b1111111.
+
+### Key Points:
+* Hexadecimal Digits: The module supports hexadecimal digits, meaning it can display values from 0 (0000) to F (1111) on a 7-segment display.
+* Efficient Case Statement: The module uses a case statement that ensures a direct mapping from each digit to its corresponding segment configuration.
+* Default Behavior: If the input is outside the expected range (0-15), all segments are turned off, ensuring the display remains blank.
+
+This decoder can be useful for systems that display numbers, letters (A-F), or for debugging purposes where hexadecimal values need to be displayed.
+
 ### Verilog Code for 7-Segment Decoder
 
 ```verilog
@@ -1026,6 +1061,49 @@ end
 
 endmodule
 ```
+
+## 7-Segment Multiplexer
+The seven-segment display multiplexer (MUX) module you've provided allows for displaying a 32-bit value across eight 7-segment displays. The core functionality is to multiplex the display, meaning it switches rapidly between digits so that all eight digits appear to be displayed simultaneously, even though only one is actually being lit at a time.
+
+### Inputs and Outputs:
+* Inputs
+  * clk: The clock signal used for synchronizing the multiplexing process.
+  * reset: A reset signal that sets the system back to its initial state.
+  * value: A 32-bit value, containing eight 4-bit digits to display.
+* Outputs
+  * an: The 8-bit output controlling the anodes of the 7-segment displays. A 0 in any bit of an enables the corresponding display.
+  * digit: The 4-bit output corresponding to the digit currently being displayed.
+
+### Key Components:
+1. Refresh Counter:
+* A 20-bit refresh counter is used to create a slower refresh rate for the display multiplexing. The clock signal is divided down, and the most significant bits (refresh_counter[19:17]) control which digit to display. The counter allows for refreshing the display quickly enough to give the appearance that all digits are shown simultaneously.
+2. Digit Splitting:
+* The 32-bit input value is split into eight 4-bit segments (digit0 through digit7), where each segment corresponds to a specific digit to be displayed on one of the 7-segment displays:
+  * digit0: Right-most digit.
+  * digit7: Left-most digit.
+3. Multiplexing Logic:
+* The multiplexing process is controlled by the refresh_digit signal (which is derived from refresh_counter[19:17]). This 3-bit signal determines which digit to display at any given moment.
+* The an output enables one digit at a time by setting one bit of the 8-bit anode signal low (active low), while the others remain high (inactive). For example:
+  * an = 8'b11111110: The right-most digit (digit0) is enabled.
+  * an = 8'b01111111: The left-most digit (digit7) is enabled.
+4. Case Statement:
+* The case statement maps each value of refresh_digit to the appropriate digit to display. This ensures that the correct 4-bit segment of the value is shown at the right time:
+  * When refresh_digit = 3'b000, it displays digit0.
+  * When refresh_digit = 3'b111, it displays digit7.
+
+### Functionality Overview:
+1. Clock-Driven Multiplexing:
+  * The display switches between the digits in a round-robin fashion, using the refresh counter to cycle through the digits.
+  * Even though only one digit is enabled at a time, the switching is fast enough that all eight digits appear to be displayed simultaneously.
+2. Reset Functionality:
+  * On reset, the refresh counter is set to zero, and all anodes are disabled (an = 8'b11111111), ensuring that no digits are displayed.
+
+### Key Points:
+* Efficiency: The module only uses one active digit at a time, significantly reducing power consumption.
+* Scalability: The design can handle 8 digits by simply cycling through the anodes, which is enough to display a 32-bit number (each digit representing 4 bits).
+* Clock Sensitivity: The refresh rate is determined by the clock input. The module operates at a speed where all digits appear to be constantly illuminated.
+
+This is an efficient design for 7-segment displays that need to show large numbers (like 32-bit values), and it can be used in many projects requiring visual feedback from microcontrollers, FPGA, or other digital systems.
 
 ### Verilog Code for 7-Segment Multiplexer
 
