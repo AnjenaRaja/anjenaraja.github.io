@@ -506,6 +506,56 @@ endmodule
 
 ## Instruction Register (IR)
 
+### Overview
+The Instruction Register (IR) in the SAP-1 architecture holds the current instruction that the CPU is executing. It splits the instruction into two parts: the opcode (the operation to perform) and the operand (the data or address associated with the operation). The IR plays a critical role in controlling the CPU's execution flow by interpreting and storing instructions fetched from memory.
+
+### Inputs and Outputs
+* Inputs:
+  * clk: The clock signal that synchronizes the register's operations.
+  * reset: A signal to reset the instruction register to zero.
+  * load: A control signal that, when high, loads a new instruction into the IR.
+  * instruction_in: The 8-bit input representing the instruction to be loaded.
+* Outputs:
+  * opcode: The 4-bit output representing the operation part of the instruction.
+  * operand: The 4-bit output representing the data or address part of the instruction.
+
+### Functionality
+The Instruction Register (IR) takes an 8-bit instruction input (instruction_in) and splits it into two 4-bit parts:
+
+* The opcode (higher 4 bits) specifies the operation the CPU should perform.
+* The operand (lower 4 bits) provides the data or memory address for the operation.
+
+#### Reset Behavior
+* If the reset signal is high during a clock cycle, both opcode and operand are reset to 0, ensuring that no previous instruction remains in the register when the system is restarted.
+
+#### Load Instruction Behavior
+* If the load signal is high during the clock cycle, the IR loads the 8-bit instruction_in into its opcode and operand fields. The 4 most significant bits are stored in opcode, while the 4 least significant bits are stored in operand.
+
+### Key Points
+1. Reset Functionality:
+  * When the reset signal is high, both the opcode and operand are cleared to 0. This ensures that no previous instruction remains in the IR after a reset event, such as restarting the CPU or clearing the current state.
+2. Instruction Loading:
+  * When the load signal is high, the 8-bit instruction_in is split into the opcode (higher 4 bits) and operand (lower 4 bits) on the rising edge of the clock.
+  * The opcode determines what operation will be executed (e.g., ADD, SUB, LDA, etc.), while the operand provides the associated data or memory address for that operation.
+3. Clock-Synchronized Operation:
+  * The IR updates its values only on the rising edge of the clock (clk). This ensures that the register operates in sync with the rest of the system, allowing the fetch-decode-execute cycle to proceed smoothly.
+
+### Application in SAP-1
+In the SAP-1 architecture, the Instruction Register (IR) is loaded with the instruction fetched from memory during the fetch phase. Once loaded, the instruction is split into:
+* The opcode: This tells the control unit which operation to perform (e.g., ADD, SUB, HLT).
+* The operand: This provides the memory address or data value needed for the operation.
+
+For example, in a simple program:
+The instruction 8'b00101111 (binary) could be decoded as:
+* Opcode: 0010 (binary) → ADD operation
+* Operand: 1111 (binary) → Memory address or data value for the ADD operation
+
+During the fetch-decode-execute cycle:
+* The IR first holds the instruction fetched from memory.
+* The control unit then decodes the opcode and operand, determining the next operation to perform.
+
+This register is vital for orchestrating the correct execution of instructions, ensuring that the CPU operates according to the program stored in memory.
+
 ### Verilog code for Instruction Register (IR)
 
 ```verilog
