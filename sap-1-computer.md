@@ -625,7 +625,7 @@ For example:
 * After performing an ADD or SUB operation, the result in the accumulator can be loaded into the output register for visualization.
 * The system’s external components, such as a display, will show the value stored in the output register, allowing the user to see the result of the executed instruction.
 
-### Example Workflow
+#### Example Workflow
 1. Reset: The system is reset, clearing the output register (data_out = 0).
 2. Operation Execution: The CPU performs a series of operations, and the result is available as data_in.
 3. Load New Data: When the load signal is high, the value of data_in is loaded into the output register, updating data_out.
