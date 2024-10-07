@@ -328,6 +328,7 @@ The A register is an essential part of the SAP-1 architecture. It serves as an a
   * data_in: The 8-bit data input to be loaded into the register.
 * Outputs:
   * data_out: The 8-bit data output, which holds the current value of the register.
+
 ### Functionality
 The A register performs two main functions:
 1. Storing Data: It holds an 8-bit value, which can be loaded from the data_in input when the load signal is high.
@@ -347,12 +348,13 @@ The A register performs two main functions:
 3. Clock-Synchronized Operation:
    * The register is edge-triggered, meaning that it updates its value only on the rising edge of the clock (clk).
    * This ensures that the operations are synchronized with the rest of the system.
+
 ### Application in SAP-1
 In the SAP-1 architecture, the A register serves as the accumulator. It stores data used in arithmetic operations like addition or subtraction. It holds the operand fetched from memory or the result of computations, making it a vital component in the processor's operation.
-
 For example:
 * When executing an LDA instruction, the value from memory is loaded into the A register via data_in.
 * When performing an ADD instruction, the A register holds one operand, while the other comes from memory or another register. The result of the addition is stored back in the A register.
+
 The reset signal allows the register to be cleared, and the load signal controls when new data is loaded into the A register.
 
 ### Verilog code for A Register
