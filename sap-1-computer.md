@@ -378,6 +378,49 @@ endmodule
 
 ## B Register
 
+### Overview
+The B register in the SAP-1 architecture is another general-purpose register, much like the A register, but with a specific role during arithmetic operations. The B register typically holds the second operand in arithmetic operations such as addition or subtraction. In this simple CPU design, it temporarily stores data to be used in conjunction with the value in the A register.
+
+### Inputs and Outputs
+* Inputs:
+   * clk: The clock signal that drives the register's operations.
+   * reset: A signal to reset the register's output to zero.
+   * load: A control signal that, when high, allows the register to load new data.
+   * data_in: The 8-bit data input to be loaded into the register.
+
+* Outputs:
+   * data_out: The 8-bit data output, which holds the current value of the register.
+
+### Functionality
+The B register performs two main functions:
+1. Storing Data: It holds an 8-bit value, which can be loaded from the data_in input when the load signal is high.
+2. Resetting the Data: When the reset signal is activated (high), the register clears its output, setting data_out to 0.
+
+* Reset Behavior
+  * If the reset signal is high during a clock cycle, the register output (data_out) is immediately reset to 0.
+* Load Data Behavior
+  * If the reset signal is not active, and the load signal is high, the register loads the data from data_in into data_out on the rising edge of the clock signal.
+
+### Key Points
+1. Reset Functionality:
+  * When the reset signal is high, the register output data_out is cleared to 0 on the rising edge of the clock.
+  * This ensures that the register can be cleared and ready for new operations.
+2. Data Load Control:
+  * The load signal controls when new data is loaded into the register.
+  * When load is high during a clock cycle, the value from data_in is transferred to data_out.
+3. Clock-Synchronized Operation:
+  * The register is edge-triggered, meaning that it updates its value only on the rising edge of the clock (clk).
+  * This ensures that the operations are synchronized with the rest of the system.
+
+### Application in SAP-1
+In the SAP-1 architecture, the B register works in tandem with the A register during arithmetic operations. While the A register holds the primary operand (or the result of operations), the B register stores the secondary operand, typically fetched from memory.
+
+For example:
+* During an ADD operation, the value in the A register is added to the value in the B register, and the result is stored back in the A register.
+* During a SUB operation, the B register holds the value to be subtracted from the A register.
+
+This register is essential for performing two-operand arithmetic, and its functionality is critical for basic ALU operations in the SAP-1 CPU.
+
 ### Verilog code for B Register
 
 ```verilog
