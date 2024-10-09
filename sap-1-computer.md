@@ -7,6 +7,9 @@ subtitle: Digital Electronics Club Project (Active - Work in progress)
 # SAP (Simple-As-Possible) Computer
 
 ## Architecture
+### Overview
+
+![Figure-0](/assets/img/sap1/fig-0.png){: .mx-auto.d-block :}
 
 ## Clock 
 ### Overview
