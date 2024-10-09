@@ -9,6 +9,18 @@ subtitle: Digital Electronics Club Project (Active - Work in progress)
 ## Architecture
 ### Overview
 
+To implement Malvino's SAP-1 (Simple As Possible) CPU in Verilog for the Nexys A7 AT-100 FPGA, we'll need to break it down into components such as:
+
+* Program Counter (PC): A simple counter to hold the address of the next instruction.
+* Memory Address Register (MAR): Holds the address of the memory to fetch.
+* Instruction Register (IR): Holds the instruction fetched from memory.
+* Control Unit (CU): Controls the operation of other components based on the opcode in IR.
+* Arithmetic Logic Unit (ALU): Performs arithmetic operations.
+* Accumulator (ACC): Temporary register for holding the results of operations.
+* Output Register (OUT): Holds the result to be output.
+
+Here is a simplfied architecture diagram of my understanding of SAP-1. 
+
 ![Figure-0](/assets/img/sap1/fig-0.png){: .mx-auto.d-block :}
 
 ## Clock 
