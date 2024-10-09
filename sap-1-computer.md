@@ -1454,6 +1454,9 @@ module top(
     
 endmodule
 ```
+## Schematic
+
+#### [![Link to Schematic](/assets/img/sap1/schematic.svg)](/assets/img/sap1/schematic.svg){:target="_blank"}
 
 ## References
 
