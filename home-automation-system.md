@@ -112,8 +112,8 @@ The HTML UI serves as the front-end for controlling and monitoring the home auto
 
 ### Key Components of the HTML UI
 1. HTML Structure:
-  * The UI starts with the <!DOCTYPE html> declaration, which defines it as an HTML5 document.
-  * The <html>, <head>, and <body> tags organize the structure of the page.
+  * The UI starts with the **<!DOCTYPE html>** declaration, which defines it as an HTML5 document.
+  * The **<html>**, **<head>**, and **<body>** tags organize the structure of the page.
 2. Viewport Meta Tag:
 ```code
 <meta name="viewport" content="width=device-width, initial-scale=1">
