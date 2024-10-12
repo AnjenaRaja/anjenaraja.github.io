@@ -4,6 +4,197 @@ title: Home Automation System
 subtitle: Genius Hour Project
 ---
 
+## Overview
+This project involves a Home Automation System using the ESP8266 Wi-Fi module. It allows the control of lights, the garage door, and other home appliances over a web interface that can be accessed via a Wi-Fi Access Point created by the system itself. The project also uses a DHT11 sensor to monitor temperature and humidity, sending the data to a server for display.
+
+## Key Features:
+* Wi-Fi Access Point Creation: The system does not connect to a home router for safety reasons but instead creates its own Access Point to isolate the home network from potential security risks.
+* Web-based Control Interface: Users can control lights and the garage door through a simple web interface. The interface includes buttons to turn individual lights on or off and control the garage door.
+* Automatic Porch Light Control: Based on the light intensity outside, the porch light is turned on automatically at night or turned off during the day.
+DHT11 Sensor for Temperature and Humidity Monitoring: The system uses a DHT11 sensor to monitor temperature and humidity, and displays the current readings on the web page.
+* Simple User Interface: The project incorporates the use of HTML and CSS to display an intuitive user interface, complete with icons representing different rooms, devices, and states of the home.
+
+## Hardware Components
+* ESP8266 Wi-Fi Module: Central to the project, used for networking and web server capabilities.
+* Servo Motor: Attached to the garage door for opening and closing it.
+* DHT11 Sensor: Used to measure the humidity and temperature inside the house.
+* Lights (LEDs): Used to simulate lights in various rooms.
+* Relay (optional): Can be used to control high-power devices such as actual home lights and garage doors.
+
+## Software Components
+### Libraries Used:
+* ESP8266WiFi.h: To enable Wi-Fi functionality and create an Access Point.
+* ESP8266WebServer.h: To manage HTTP requests and serve web pages.
+* Servo.h: To control the servo motor for the garage door.
+* DHT.h: To interact with the DHT11 temperature and humidity sensor.
+* ESP8266HTTPClient.h: To send HTTP requests with the sensor data.
+
+## Detailed Explanation of Code
+### Wi-Fi Access Point Setup
+The ESP8266 creates its own Access Point with the following credentials:
+
+```cpp
+const char *ssid = "Home-Automation-225";
+const char *password = "Anjena225";
+```
+* SSID is the name of the network.
+* Password ensures only authorized devices can connect to it.
+
+A custom IP configuration is used for the server, ensuring the system can be accessed via a known IP address:
+
+```cpp
+IPAddress ip(1, 2, 3, 4);
+IPAddress gateway(1, 2, 3, 1);
+IPAddress subnet(255, 255, 255, 0);
+```
+### Web Server and Control Interface
+The system uses two web servers:
+
+1. WiFiServer webServer(80): Handles the main control page.
+2. ESP8266WebServer webServerSensors(8080): Handles temperature and humidity readings sent from the DHT11 sensor.
+HTML Interface:
+
+The web page includes icons and buttons for controlling different devices in the house. For example, the living room light can be toggled on/off using these commands:
+
+```cpp
+if (header.indexOf("GET /living/light/on") >= 0) {
+    livingLightState = "on";
+    digitalWrite(livingLight, HIGH);
+}
+else if (header.indexOf("GET /living/light/off") >= 0) {
+    livingLightState = "off";
+    digitalWrite(livingLight, LOW);
+}
+```
+
+Each room's light and the garage door have similar commands, and a table is used to display the current state along with control buttons.
+
+## Servo Motor Control (Garage Door)
+The garage door is controlled using a servo motor. The position of the door is adjusted to 0 degrees for closed and 90 degrees for open:
+
+```cpp
+garageDoorMotor.write(0); // close
+garageDoorMotor.write(90); // open
+```
+
+## Light Dependent Resistor (LDR)
+The LDR measures light intensity, controlling the porch light:
+
+```cpp
+ldrValue = analogRead(A0); // read the LDR value
+if (ldrValue < 50) {
+    // If it's dark, turn on the porch light
+    digitalWrite(porchLight, HIGH);
+}
+```
+
+## Temperature and Humidity Monitoring
+The system uses a DHT11 sensor to monitor the temperature and humidity. It reads values from the sensor and sends them to the web server via an HTTP request:
+
+```cpp
+float hTemp = dht.readHumidity();
+float tTemp = dht.readTemperature(true);
+```
+
+This data is then displayed on the web page alongside control buttons.
+
+## Automation Logic for Air Conditioning (AC)
+The project controls an air conditioner (simulated with a built-in LED), turning it on if the temperature exceeds 80°F:
+
+```cpp
+if(tempf > 80) {
+    digitalWrite(ac, LOW); // AC ON
+}
+```
+
+## Overview of HTML UI
+The HTML UI serves as the front-end for controlling and monitoring the home automation system. It is displayed in a web browser when a user connects to the ESP8266 access point. The page refreshes every 5 seconds to show the latest status of the devices.
+
+### Key Components of the HTML UI
+1. HTML Structure:
+* The UI starts with the <!DOCTYPE html> declaration, which defines it as an HTML5 document.
+* The <html>, <head>, and <body> tags organize the structure of the page.
+2. Viewport Meta Tag:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+* This tag ensures the page is responsive, adjusting to different screen sizes, which is essential for usability on mobile devices.
+
+3. Auto-refresh:
+
+```html
+<meta http-equiv="refresh" content="5; url=http://1.2.3.4">
+```
+* The page automatically refreshes every 5 seconds, allowing real-time updates without needing a manual refresh.
+
+4. CSS Styling:
+
+```css
+<style>
+html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center; }
+.button { background-color: #195B6A; border: none; color: white; padding: 4px 10px; width: 80px; text-decoration: none; font-size: 20px; margin: 2px; cursor: pointer; }
+.button2 {background-color: #77878A;}
+.bigbutton { background-color: #195B6A; border: none; color: white; padding: 4px 10px; width: 300px; text-decoration: none; font-size: 20px; margin: 2px; cursor: pointer; }
+.bigbutton2 {background-color: #77878A;}
+</style>
+``` 
+* The CSS styles define the appearance of the page, including font styles, button sizes, and colors, enhancing the user experience.
+
+5. Page Title and Header:
+
+```cpp
+client.println("<body>");
+client.println(house);
+client.println("<font size=\"6\">Home Automation</font>");
+client.println("<br/>");
+client.println("<font size=\"4\"><strong>by Anjena Raja, Grade 5</strong></font>");
+client.println("<br/>");
+client.println("<font size=\"4\"><strong>Room 225, Mrs. Carr</strong></font>");
+```
+
+* This section introduces the application with a title and some identification of the creator, making the UI more personalized and informative.
+
+6. Device Status and Controls:
+
+* The UI displays the status of various devices (lights and garage door) in a table format. Each device's current state and control buttons (ON/OFF or OPEN/CLOSE) are included:
+```cpp
+client.println("<table align=\"center\" cellpadding=\"3\">");
+```
+* The table structure organizes the information clearly, making it easy for users to view and interact with the controls.
+* Dynamic Status Updates: Each device's state is dynamically updated based on the conditions defined in the code. For example:
+
+```cpp
+if (livingLightState=="off") 
+{
+    client.println("<td>" + lightOff + "</td>");
+    client.println("<td><a href=\"/living/light/on\"><button class=\"button\">ON</button></a></td>");
+} 
+else 
+{
+    client.println("<td>"+ lightOn + "</td>");
+    client.println("<td><a href=\"/living/light/off\"><button class=\"button button2\">OFF</button></a></td>");
+}
+```
+
+* This conditional structure allows for different buttons to be displayed based on the current state of each light.
+
+7. Light Control Buttons:
+
+* There are also buttons to control all lights at once:
+```cpp
+client.println("<td colspan=\"5\"><a href=\"/all/light/on\"><button class=\"bigbutton\">ALL LIGHTS ON</button></a></td>");
+client.println("<td colspan=\"5\"><a href=\"/all/light/off\"><button class=\"bigbutton bigbutton2\">ALL LIGHTS OFF</button></a></td>");
+```
+* These buttons provide a convenient way to control multiple devices with a single click.
+8. Environmental Sensors:
+
+* The UI also displays readings from the temperature and humidity sensors:
+```cpp
+client.print("<p>Temp: " + temperature.substring(0,4) + "&#8457;&nbsp;&nbsp;&nbsp;&nbsp;Humidity: " + humidity.substring(0,2) + "%&nbsp;&nbsp;&nbsp;&nbsp;A/C: ");
+```
+* This information is crucial for monitoring the environment and managing the air conditioning system.
+
 ## Home Automation System Code
 ``` cpp
 /*
