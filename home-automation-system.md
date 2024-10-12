@@ -422,7 +422,8 @@ void loop()
 
 ## Remote Temperature Sensor Code
 ``` cpp
-client#include <DHT.h>
+// client
+#include <DHT.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
