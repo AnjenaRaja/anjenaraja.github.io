@@ -115,17 +115,17 @@ The HTML UI serves as the front-end for controlling and monitoring the home auto
   * The UI starts with the `<!DOCTYPE html>` declaration, which defines it as an HTML5 document.
   * The `<html>`, `<head>`, and `<body>` tags organize the structure of the page.
 2. Viewport Meta Tag:
-```html
+```code
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
   * This tag ensures the page is responsive, adjusting to different screen sizes, which is essential for usability on mobile devices.
 3. Auto-refresh:
-```html
+```code
 <meta http-equiv="refresh" content="5; url=http://1.2.3.4">
 ```
   * The page automatically refreshes every 5 seconds, allowing real-time updates without needing a manual refresh.
 4. CSS Styling:
-```css
+```code
 <style>
 html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center; }
 .button { background-color: #195B6A; border: none; color: white; padding: 4px 10px; width: 80px; text-decoration: none; font-size: 20px; margin: 2px; cursor: pointer; }
