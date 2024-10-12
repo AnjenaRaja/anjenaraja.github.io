@@ -115,23 +115,16 @@ The HTML UI serves as the front-end for controlling and monitoring the home auto
   * The UI starts with the <!DOCTYPE html> declaration, which defines it as an HTML5 document.
   * The <html>, <head>, and <body> tags organize the structure of the page.
 2. Viewport Meta Tag:
-
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
-
   * This tag ensures the page is responsive, adjusting to different screen sizes, which is essential for usability on mobile devices.
-
 3. Auto-refresh:
-
 ```html
 <meta http-equiv="refresh" content="5; url=http://1.2.3.4">
 ```
-  
   * The page automatically refreshes every 5 seconds, allowing real-time updates without needing a manual refresh.
-
 4. CSS Styling:
-
 ```css
 <style>
 html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center; }
@@ -141,11 +134,8 @@ html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-ali
 .bigbutton2 {background-color: #77878A;}
 </style>
 ``` 
-
   * The CSS styles define the appearance of the page, including font styles, button sizes, and colors, enhancing the user experience.
-
 5. Page Title and Header:
-
 ```cpp
 client.println("<body>");
 client.println(house);
@@ -155,20 +145,14 @@ client.println("<font size=\"4\"><strong>by Anjena Raja, Grade 5</strong></font>
 client.println("<br/>");
 client.println("<font size=\"4\"><strong>Room 225, Mrs. Carr</strong></font>");
 ```
-
   * This section introduces the application with a title and some identification of the creator, making the UI more personalized and informative.
-
 6. Device Status and Controls:
-
   * The UI displays the status of various devices (lights and garage door) in a table format. Each device's current state and control buttons (ON/OFF or OPEN/CLOSE) are included:
-
 ```cpp
 client.println("<table align=\"center\" cellpadding=\"3\">");
 ```
-
   * The table structure organizes the information clearly, making it easy for users to view and interact with the controls.
   * Dynamic Status Updates: Each device's state is dynamically updated based on the conditions defined in the code. For example:
-
 ```cpp
 if (livingLightState=="off") 
 {
@@ -181,28 +165,19 @@ else
     client.println("<td><a href=\"/living/light/off\"><button class=\"button button2\">OFF</button></a></td>");
 }
 ```
-
   * This conditional structure allows for different buttons to be displayed based on the current state of each light.
-
 7. Light Control Buttons:
-
   * There are also buttons to control all lights at once:
-
 ```cpp
 client.println("<td colspan=\"5\"><a href=\"/all/light/on\"><button class=\"bigbutton\">ALL LIGHTS ON</button></a></td>");
 client.println("<td colspan=\"5\"><a href=\"/all/light/off\"><button class=\"bigbutton bigbutton2\">ALL LIGHTS OFF</button></a></td>");
 ```
-
   * These buttons provide a convenient way to control multiple devices with a single click.
-
 8. Environmental Sensors:
-
   * The UI also displays readings from the temperature and humidity sensors:
-
 ```cpp
 client.print("<p>Temp: " + temperature.substring(0,4) + "&#8457;&nbsp;&nbsp;&nbsp;&nbsp;Humidity: " + humidity.substring(0,2) + "%&nbsp;&nbsp;&nbsp;&nbsp;A/C: ");
 ```
-
   * This information is crucial for monitoring the environment and managing the air conditioning system.
 
 ## Home Automation System Code
