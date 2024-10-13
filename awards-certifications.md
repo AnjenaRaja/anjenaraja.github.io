@@ -6,8 +6,7 @@ subtitle: Honoring Milestones in Technology, Education, and Service
 
 # Documentation in Progress
 
-<div style="max-height: 200px; overflow-y: auto;">
-  ```verilog
+```verilog
   // Your Verilog code goes here
   module hello;
     initial begin
@@ -20,5 +19,5 @@ subtitle: Honoring Milestones in Technology, Education, and Service
       $display("Scroll me!");
     end
   endmodule
-</div>
 ```
+
