@@ -19,7 +19,7 @@ To implement Malvino's SAP-1 (Simple As Possible) CPU in Verilog for the Nexys A
 * Accumulator (ACC): Temporary register for holding the results of operations.
 * Output Register (OUT): Holds the result to be output.
 
-Here is a simplfied architecture diagram of my understanding of SAP-1. 
+Here is a simplified architecture diagram of my understanding of SAP-1. 
 
 ![Figure-0](/assets/img/sap1/fig-0.png){: .mx-auto.d-block :}
 
