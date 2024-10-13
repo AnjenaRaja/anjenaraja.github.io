@@ -87,7 +87,7 @@ To provide a visual indication of the clock pulse, we can connect an LED to the 
 
 ### Verilog Code for Clock
 
-<div style="max-height: 300px; overflow-y: auto;">
+<div style="max-height: 100px; overflow-y: auto;">
   
 ```verilog
 module clock (
