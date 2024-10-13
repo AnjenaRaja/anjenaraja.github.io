@@ -86,8 +86,6 @@ The reset signal is used to restore the clock to its initial state and clear any
 To provide a visual indication of the clock pulse, we can connect an LED to the clk_out signal. This allows us to visually observe each clock pulse, making it easier to follow the clock transitions in real time.
 
 ### Verilog Code for Clock
-
-<div style="max-height: 250px; overflow-y: auto;">
   
 ```verilog
 module clock (
@@ -159,7 +157,6 @@ module clock (
 
 endmodule
 ```
-</div>
 
 ### Constraints Definition
 
