@@ -1506,7 +1506,7 @@ HLT
 ### What Happens for each Clock Tick
 
 | Clock | T-State | PC | MAR | RAM | IR | A | B | ALU | OUT | OPCode | Microcode | Explanation |
-|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 0 | 0 | 0 | 0 | 1E | 1 | 0 | 0 | 0 | 0 | 0 | - | - |
 
 
