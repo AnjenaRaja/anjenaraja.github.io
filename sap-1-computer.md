@@ -1474,6 +1474,50 @@ Click the image to open the detailed schematic.
 
 ## Video - Working Demo
 
+### Program Assembly
+```asm
+LDA [14]
+ADD [15]
+SUB [13]
+OUT
+HLT
+```
+### RAM Contents
+| Address | Contents | Explanation |
+|---|---|---|
+| 0 | 1E | Load the contents of memory address 14 into the A register |
+| 1 | 2F | Add the contents of memory address 15 to the A register |
+| 2 | 3D | Subtract the contents of memory address 13 from the A register |
+| 3 | 40 | Load the Output register with the contents of ALU |
+| 4 | F0 | Halt Execution |
+| 5 | 00 | No Operation |
+| 6 | 00 | No Operation |
+| 7 | 00 | No Operation |
+| 8 | 00 | No Operation |
+| 9 | 00 | No Operation |
+| A | 00 | No Operation |
+| B | 00 | No Operation |
+| C | 00 | No Operation |
+| D | 02 | Value 2 |
+| E | 06 | Value 6 |
+| F | 05 | Value 5  |
+
+### What Happens for each Clock Tick
+
+| Clock | T-State | PC | MAR | RAM | IR | A | B | ALU | OUT | Microcode | Explanation |
+|---	|---	|---	|---	|---	|---	|---	|---	|---	|---	|---	|---	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
+
+
+
 #### [![Link to video of the demo](https://img.youtube.com/vi/bc36-eByWM0/0.jpg)](https://www.youtube.com/watch?v=bc36-eByWM0){:target="_blank"}
 
 ## References
