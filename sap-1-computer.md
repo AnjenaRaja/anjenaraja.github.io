@@ -1474,7 +1474,7 @@ Click the image to open the detailed schematic.
 
 ## Video - Working Demo
 
-### Program Assembly
+### Assembly
 ```asm
 LDA [14]
 ADD [15]
