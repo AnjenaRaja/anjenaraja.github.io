@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SAP-1 Computer
-subtitle: Digital Electronics Club Project (Active - Work in progress)
+subtitle: Digital Electronics Club Project
 ---
 
 # SAP (Simple-As-Possible) Computer
