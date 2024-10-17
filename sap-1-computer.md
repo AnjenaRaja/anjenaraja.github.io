@@ -1472,6 +1472,10 @@ Click the image to open the detailed schematic.
 
 #### [![Link to Schematic](/assets/img/sap1/schematic.svg)](/assets/img/sap1/schematic.svg){:target="_blank"}
 
+## Video - Working Demo
+
+#### [![Link to video of the demo](https://img.youtube.com/vi/bc36-eByWM0/0.jpg)](https://www.youtube.com/watch?v=bc36-eByWM0){:target="_blank"}
+
 ## References
 
 * Digital Computer Electronics Paperback - Albert Malvino And Jerald Brown
