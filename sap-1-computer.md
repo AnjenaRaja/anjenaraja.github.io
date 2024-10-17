@@ -1506,9 +1506,11 @@ HLT
 ### What happens for each clock tick
 
 | Clock | T State | PC | MAR | RAM | IR | A | B | ALU | OUT | OPCode | Microcode | Explanation |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 0 | 0 | 0 | 0 | 1E | 1 | 0 | 0 | 0 | 0 | 0 | - | - |
-
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--- |
+| 0 | 0 | 0 | 0 | 1E | 00 | 0 | 0 | 0 | 0 | 0 | - | - |
+| 1 | 0 | 0 | 0 | 1E | 00 | 0 | 0 | 0 | 0 | 0 | Enable PC, Load MAR | Load the Memory Address Register with the contents of the Program Counter |
+| 2 | 1 | 0 | 0 | 1E | 00 | 0 | 0 | 0 | 0 | 0 | INC PC | Increment the Program Counter |
+| 3 | 2 | 1 | 0 | 1E | 1E | 0 | 0 | 0 | 0 | 0 | Enable RAM, Load IR | Load the instruction from the RAM into the Instruction Register |
 
 #### [![Link to video of the demo](https://img.youtube.com/vi/bc36-eByWM0/0.jpg)](https://www.youtube.com/watch?v=bc36-eByWM0){:target="_blank"}
 
