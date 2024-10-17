@@ -1485,7 +1485,7 @@ HLT
 ### RAM Contents
 
 | Address | Contents | Explanation |
-|--- |--- |--- |
+|:---:|:---:|:--- |
 | 0 | 1E | Load the contents of memory address 14 into the A register |
 | 1 | 2F | Add the contents of memory address 15 to the A register |
 | 2 | 3D | Subtract the contents of memory address 13 from the A register |
@@ -1503,9 +1503,9 @@ HLT
 | E | 06 | Value 6 |
 | F | 05 | Value 5 |
 
-### What Happens for each Clock Tick
+### What happens for each clock tick
 
-| Clock | T-State | PC | MAR | RAM | IR | A | B | ALU | OUT | OPCode | Microcode | Explanation |
+| Clock | T State | PC | MAR | RAM | IR | A | B | ALU | OUT | OPCode | Microcode | Explanation |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 0 | 0 | 0 | 0 | 1E | 1 | 0 | 0 | 0 | 0 | 0 | - | - |
 
