@@ -1505,18 +1505,9 @@ HLT
 
 ### What Happens for each Clock Tick
 
-| Clock | T-State | PC | MAR | RAM | IR | A | B | ALU | OUT | Microcode | Explanation |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 0 |   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|   	|
-
+| Clock | T-State | PC | MAR | RAM | IR | A | B | ALU | OUT | OPCode | Microcode | Explanation |
+|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
+| 0 | 0 | 0 | 0 | 1E | 1 | 0 | 0 | 0 | 0 | 0 | - | - |
 
 
 #### [![Link to video of the demo](https://img.youtube.com/vi/bc36-eByWM0/0.jpg)](https://www.youtube.com/watch?v=bc36-eByWM0){:target="_blank"}
