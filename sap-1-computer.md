@@ -1476,9 +1476,9 @@ Click the image to open the detailed schematic.
 
 ### Assembly
 ```asm
-LDA [14]
-ADD [15]
-SUB [13]
+LDA [E]
+ADD [F]
+SUB [D]
 OUT
 HLT
 ```
