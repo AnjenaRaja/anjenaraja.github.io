@@ -79,7 +79,6 @@ As shown above, the rover can send over its temperature using the CORE_TEMP comm
 | Rover Action | Flashing LED is turned on. |
 | JPL Displayed Message Example | BEACON turned ON. |
 
-<br>
 | JPL Input Command | BEACON_OFF |
 | :------ |:--- |
 | Rover Debug Messages | BEACON_OFF - received.<br>BEACON turned OFF - sent. |
