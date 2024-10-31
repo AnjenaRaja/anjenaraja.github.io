@@ -710,6 +710,4 @@ void sendHttpRequest()
 
 ## Video - Working Demo
 
-###### [Link to video of the demo](https://www.youtube.com/watch?v=fXEqKRG6nCM){:target="_blank"}
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fXEqKRG6nCM?si=oskxgKsJvH2uZ9bT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
