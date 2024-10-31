@@ -46,7 +46,7 @@ converts them to varying amounts of current. The amount of current the phototran
 
 There are two boards with one representing the base station, JPL, and the other representing the rover. These were coded using the Arduino IDE due to the vast number of built-in libraries, helping quickly extend functionality. The Raspberry Pi Picos have a clock speed of roughly 125 MHz with some versions having higher defaults, compared to an Arduino’s 16 MHz clock speed. This means the Pi Pico can handle roughly 10 times the number of communications compared to an Arduino. Arduino IDE can be configured to handle many different boards including the Pi Pico, allowing the two to work together. 
 
-###### [Link to video of the demo](https://drive.google.com/file/d/1SWhcR6_NXC8evElUV2Yza1MXnxlzi6qL/view?usp=sharing){:target="_blank"}
+###### [Link to video of the demo](https://www.youtube.com/watch?v=siro328MJrI){:target="_blank"}
 
 ###### [![Link to video of the demo](https://img.youtube.com/vi/siro328MJrI/0.jpg)](https://www.youtube.com/watch?v=siro328MJrI){:target="_blank"}
 
@@ -364,6 +364,6 @@ This pulsating infrared technology is well suited for a myriad of other use case
 
 # Further materials
 
-###### [Link to video of the demo](https://drive.google.com/file/d/1SWhcR6_NXC8evElUV2Yza1MXnxlzi6qL/view?usp=sharing){:target="_blank"}
+###### [Link to video of the demo](https://www.youtube.com/watch?v=siro328MJrI){:target="_blank"}
 ###### [Link to presentation slides](https://docs.google.com/presentation/d/1zszqOG7fdWVzj55BVmTPCa5D9BhMQLyoGpIfbuguXEk/edit?usp=sharing){:target="_blank"}
 ###### [Link to video of the presentation](https://drive.google.com/file/d/1wFwA7b_56GKfGtUBW1VQU9VrLL4A28Vd/view){:target="_blank"}
