@@ -46,11 +46,7 @@ converts them to varying amounts of current. The amount of current the phototran
 
 There are two boards with one representing the base station, JPL, and the other representing the rover. These were coded using the Arduino IDE due to the vast number of built-in libraries, helping quickly extend functionality. The Raspberry Pi Picos have a clock speed of roughly 125 MHz with some versions having higher defaults, compared to an Arduino’s 16 MHz clock speed. This means the Pi Pico can handle roughly 10 times the number of communications compared to an Arduino. Arduino IDE can be configured to handle many different boards including the Pi Pico, allowing the two to work together. 
 
-###### [Link to video of the demo](https://www.youtube.com/watch?v=siro328MJrI){:target="_blank"}
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/siro328MJrI?si=vE2M1SpKlbjduq7u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-###### [Link to presentation slides](https://docs.google.com/presentation/d/1zszqOG7fdWVzj55BVmTPCa5D9BhMQLyoGpIfbuguXEk/edit?usp=sharing){:target="_blank"}
 
 ![Figure-4](/assets/img/lcs/fig-4.png){: .mx-auto.d-block :}
 
