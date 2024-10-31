@@ -1516,6 +1516,8 @@ HLT
 
 -->
 
+###### [Link to video of the demo](https://www.youtube.com/watch?v=bc36-eByWM0){:target="_blank"}
+
 #### [![Link to video of the demo](https://img.youtube.com/vi/bc36-eByWM0/0.jpg)](https://www.youtube.com/watch?v=bc36-eByWM0){:target="_blank"}
 
 ## References
