@@ -904,4 +904,7 @@ void loop()
 ```
 
 ## Video - Working Demo
+
+###### [Link to video of the demo](https://www.youtube.com/watch?v=nYh8BSovpZA)){:target="_blank"}
+
 #### [![Link to video of the demo](https://img.youtube.com/vi/nYh8BSovpZA/0.jpg)](https://www.youtube.com/watch?v=nYh8BSovpZA){:target="_blank"}
