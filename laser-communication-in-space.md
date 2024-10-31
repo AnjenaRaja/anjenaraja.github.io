@@ -48,7 +48,7 @@ There are two boards with one representing the base station, JPL, and the other 
 
 ###### [Link to video of the demo](https://www.youtube.com/watch?v=siro328MJrI){:target="_blank"}
 
-###### [![Link to video of the demo](https://img.youtube.com/vi/siro328MJrI/0.jpg)](https://www.youtube.com/watch?v=siro328MJrI){:target="_blank"}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/siro328MJrI?si=vE2M1SpKlbjduq7u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ###### [Link to presentation slides](https://docs.google.com/presentation/d/1zszqOG7fdWVzj55BVmTPCa5D9BhMQLyoGpIfbuguXEk/edit?usp=sharing){:target="_blank"}
 
