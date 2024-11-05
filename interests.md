@@ -39,7 +39,8 @@ This image is me with our award for best orchestra from the Anaheim Heritage Mus
 ![Figure-9](/assets/img/interests/fig-9.jpg){: .mx-auto.d-block :}
 
 Here is a link to videos of our most recent concert. 
-https://drive.google.com/drive/folders/1kVbfxQwXpja9cAYQgVYREmwhDeabPR2e?usp=sharing
+
+###### [Link to concert videos](https://drive.google.com/drive/folders/1kVbfxQwXpja9cAYQgVYREmwhDeabPR2e?usp=sharing){:target="_blank"}
 
 I have been part of our school’s CSF club for the past 4 years, tutoring my peers after school in subjects ranging from Algebra, Computer Science, Calculus, Engineering, English, Spanish, and Physics. I have also helped students with paragraph writing and essay revision. This gives me the chance to provide a bit of confidence and support so that they continue to pursue the subjects that interest them rather than become discouraged. Here I am tutoring my classmate in Spanish vocabulary. 
 
