@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Interests and Hobbies
-subtitle: Passions & Pastimes
+title: Interests & Hobbies
+subtitle: Passions and Pastimes
 ---
 
 # Documentation in Progress
