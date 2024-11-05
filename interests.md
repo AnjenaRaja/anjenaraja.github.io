@@ -66,13 +66,13 @@ I’ve been working on electronics projects for several years. I love learning h
 
 I am part of the NAF Engineering Academy which gives me the opportunity to take classes in engineering, interact with people in my future career paths, and engage in a more hands-on approach to my studies. Here are a few pictures of my CAD models I made in my 9th grade Engineering 1 class. 
 
-Scissor Lift: 
+### Scissor Lift 
 
 ![Figure-16](/assets/img/interests/fig-16.jpg){: .mx-auto.d-block :}
 
 ![Figure-17](/assets/img/interests/fig-17.jpg){: .mx-auto.d-block :}
 
-Model Car: 
+### Model Car
 
 ![Figure-18](/assets/img/interests/fig-18.jpg){: .mx-auto.d-block :}
 
