@@ -60,7 +60,7 @@ I am the Chairwoman of our school’s Coding Club. I use my position for recruit
 
 I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. In these photos, I am soldering a capacitor to a circuit board for an FM radio. 
 
-![Figure-14](/assets/img/interests/fig-15.jpg){: .mx-auto.d-block :}
+![Figure-14](/assets/img/interests/fig-14.jpg){: .mx-auto.d-block :}
 
 ![Figure-15](/assets/img/interests/fig-15.jpg){: .mx-auto.d-block :}
 
