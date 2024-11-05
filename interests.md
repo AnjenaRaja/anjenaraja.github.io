@@ -4,6 +4,7 @@ title: Interests & Hobbies
 subtitle: Passions and Pastimes
 ---
 
+## Numismatics: A Global Collection
 I am an avid numismatist (coin collector). I’ve collected coins from over 75 countries, asking my friends and relatives to bring me coins from all the places they travel. Each country’s currency is reflective of their history and culture, so collecting them allows me to learn a bit more about people across the globe. 
 
 ![Figure-1](/assets/img/interests/fig-1.jpg){: .mx-auto.d-block :}
@@ -24,6 +25,7 @@ Here are some more photos of the coins to get a clearer look at them.
 
 ![Figure-6](/assets/img/interests/fig-6.jpg){: .mx-auto.d-block :}
 
+## Musical Journey with the Violin
 I have been playing the violin for the past 5 years and this is my 3rd year in our school’s advanced Chamber Orchestra. We have played pieces ranging from classical, to rock, to original movie scores over the past 4 years. We have been consistently ranked as one of the best orchestras in the state. I have had the opportunity to play alongside professional musicians and my extremely talented peers, so this is truly a phenomenal experience. I intend to continue making music in college, joining orchestras and ensembles. 
 
 Here is a photo of my advanced Chamber Orchestra class in 10th grade. 
@@ -42,12 +44,15 @@ Here is a link to videos of our most recent concert.
 
 ###### [Link to concert videos](https://drive.google.com/drive/folders/1kVbfxQwXpja9cAYQgVYREmwhDeabPR2e?usp=sharing){:target="_blank"}
 
+## Peer Tutoring and Academic Support
 I have been part of our school’s CSF club for the past 4 years, tutoring my peers after school in subjects ranging from Algebra, Computer Science, Calculus, Engineering, English, Spanish, and Physics. I have also helped students with paragraph writing and essay revision. This gives me the chance to provide a bit of confidence and support so that they continue to pursue the subjects that interest them rather than become discouraged. Here I am tutoring my classmate in Spanish vocabulary. 
 
 ![Figure-10](/assets/img/interests/fig-10.jpg){: .mx-auto.d-block :}
 
+## Community Volunteering
 When I have free time, I volunteer at the Burbank Public Libraries as a teen volunteer. I work on creating materials for student mental health resources and compiling tools that will assist students with their academics. I feel that I am able to provide a small bit of guidance to other students, even if I don’t get the opportunity to directly interact with them. 
 
+## Exploring Radio Communications
 I am a HAM radio operator with a Technician license. I have been practicing using my handheld radio to make communications. My goal is to connect to the International Space Station and speak with the astronauts. In this photo I am using my software defined radio (SDR) and my smaller antenna to tune into the NOAA weather station to test that the program is working correctly. An SDR allows me to use a wider range of protocols than a handheld radio offers. The waterfall display on the computer screen helps me identify strong frequencies to tune into. 
 
 ![Figure-11](/assets/img/interests/fig-11.jpg){: .mx-auto.d-block :}
@@ -56,6 +61,7 @@ I am a HAM radio operator with a Technician license. I have been practicing usin
 
 ![Figure-13](/assets/img/interests/fig-13.jpg){: .mx-auto.d-block :}
 
+## Leadership in Coding and STEM Advocacy
 I am the Chairwoman of our school’s Coding Club. I use my position for recruitment, outreach, and lessons. When I joined the club, I was the only woman, so I have been working to encourage more girls to take an interest in this field. We are currently preparing to compete in the ACSL competition this January. 
 
 I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. In these photos, I am soldering a capacitor to a circuit board for an FM radio. 
@@ -64,6 +70,7 @@ I’ve been working on electronics projects for several years. I love learning h
 
 ![Figure-15](/assets/img/interests/fig-15.jpg){: .mx-auto.d-block :}
 
+## Electronics and Engineering Projects
 I am part of the NAF Engineering Academy which gives me the opportunity to take classes in engineering, interact with people in my future career paths, and engage in a more hands-on approach to my studies. Here are a few pictures of my CAD models I made in my 9th grade Engineering 1 class. 
 
 ### Scissor Lift 
