@@ -64,13 +64,13 @@ I am a HAM radio operator with a Technician license. I have been practicing usin
 ## Leadership in Coding and STEM Advocacy
 I am the Chairwoman of our school’s Coding Club. I use my position for recruitment, outreach, and lessons. When I joined the club, I was the only woman, so I have been working to encourage more girls to take an interest in this field. We are currently preparing to compete in the ACSL competition this January. 
 
+## Electronics and Engineering Projects
 I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. In these photos, I am soldering a capacitor to a circuit board for an FM radio. 
 
 ![Figure-14](/assets/img/interests/fig-14.jpg){: .mx-auto.d-block :}
 
 ![Figure-15](/assets/img/interests/fig-15.jpg){: .mx-auto.d-block :}
 
-## Electronics and Engineering Projects
 I am part of the NAF Engineering Academy which gives me the opportunity to take classes in engineering, interact with people in my future career paths, and engage in a more hands-on approach to my studies. Here are a few pictures of my CAD models I made in my 9th grade Engineering 1 class. 
 
 ### Scissor Lift 
