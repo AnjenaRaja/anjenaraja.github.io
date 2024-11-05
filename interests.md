@@ -4,7 +4,7 @@ title: Interests & Hobbies
 subtitle: Passions and Pastimes
 ---
 
-I am an avid numismatist (coin collector). I’ve collected coins from over 50 countries, asking my friends and relatives to bring me coins from all the places they travel. Each country’s currency is reflective of their history and culture, so collecting them allows me to learn a bit more about people across the globe. 
+I am an avid numismatist (coin collector). I’ve collected coins from over 75 countries, asking my friends and relatives to bring me coins from all the places they travel. Each country’s currency is reflective of their history and culture, so collecting them allows me to learn a bit more about people across the globe. 
 
 ![Figure-1](/assets/img/interests/fig-1.jpg){: .mx-auto.d-block :}
 
