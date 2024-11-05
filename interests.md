@@ -6,17 +6,23 @@ subtitle: Passions and Pastimes
 
 I am an avid numismatist (coin collector). I’ve collected coins from over 50 countries, asking my friends and relatives to bring me coins from all the places they travel. Each country’s currency is reflective of their history and culture, so collecting them allows me to learn a bit more about people across the globe. 
 
+![Figure-1](/assets/img/interests/fig-1.jpg){: .mx-auto.d-block :}
 
+![Figure-2](/assets/img/interests/fig-2.jpg){: .mx-auto.d-block :}
 
 Here are some photos of my favorite coins. 
 
+![Figure-3](/assets/img/interests/fig-3.jpg){: .mx-auto.d-block :}
 
 The one that is standing up has side lettering stating, “decus et tutamen” which is Latin for “an ornament and a safeguard.” It refers to the inscription as both adding to the aesthetic value of the coin while protecting against clipping. The first coin on the first row is from Croatia and has a picture of a marten, an animal highly valued for its pelt. Since Croatia joined the EU, coins depicting this cute mammal will no longer be minted. The second is a one penny coin from Rhodesia minted in 1939. Rhodesia became the country Zimbabwe in 1980 and now uses the U.S. dollar. The last coin in the top row is one of my largest coins. It is a twelve sided coin which is a departure from regular rounded coins, but several countries such as the UK and Australia currently mint coins of the same shape. In the second row is the 2 ½ piastre coin from Lebanon, an example of a non-integer denomination. The coin featuring an owl is from Greece and has a value of 10 Lepta. Greece now uses Euros, so this coin is becoming increasingly rare. The last coin is the 7-sided 20 pence coin from the UK. It is considered a Reuleaux polygon because it has a constant width, a property helpful for vending machines since they identify currency based on coin width. Despite being fairly common, I have a strong affinity for this coin due to this delightful mathematical property. 
 
 Here are some more photos of the coins to get a clearer look at them. 
 
+![Figure-4](/assets/img/interests/fig-4.jpg){: .mx-auto.d-block :}
 
+![Figure-5](/assets/img/interests/fig-5.jpg){: .mx-auto.d-block :}
 
+![Figure-6](/assets/img/interests/fig-6.jpg){: .mx-auto.d-block :}
 
 I have been playing the violin for the past 5 years and this is my 3rd year in our school’s advanced Chamber Orchestra. We have played pieces ranging from classical, to rock, to original movie scores over the past 4 years. We have been consistently ranked as one of the best orchestras in the state. I have had the opportunity to play alongside professional musicians and my extremely talented peers, so this is truly a phenomenal experience. I intend to continue making music in college, joining orchestras and ensembles. 
 
