@@ -65,7 +65,7 @@ I am a HAM radio operator with a Technician license. I have been practicing usin
 I am the Chairwoman of our school’s Coding Club. I use my position for recruitment, outreach, and lessons. When I joined the club, I was the only woman, so I have been working to encourage more girls to take an interest in this field. We are currently preparing to compete in the ACSL competition this January. 
 
 ## Electronics and Engineering Projects
-I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. In these photos, I am soldering a capacitor to a circuit board for an FM radio. 
+I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. I founded the Digital Electronics Club this year to share this passion with my classmates. I have so far taught my 15 members about the basics of electronics and how computers function and we are beginning to work on hands-on projects involving Arduinos and FPGAs. In my spare time I work on smaller projects such as the one depicted below. In these photos, I am soldering a capacitor to a circuit board for an FM radio. 
 
 ![Figure-14](/assets/img/interests/fig-14.jpg){: .mx-auto.d-block :}
 
