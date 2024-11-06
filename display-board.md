@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Marquee Display Board
-subtitle: Individual Creativity Project
+subtitle: Individual Creativity Project from Middle School
 ---
 
 ![Figure-1](/assets/img/db/fig-1.png){: .mx-auto.d-block :}
