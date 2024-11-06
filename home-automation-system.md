@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Home Automation System
-subtitle: Genius Hour Project
+subtitle: Genius Hour Project from 5th Grade
 ---
 
 ## Overview
