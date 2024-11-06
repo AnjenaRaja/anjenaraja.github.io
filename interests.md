@@ -4,6 +4,25 @@ title: Interests & Hobbies
 subtitle: Passions and Pastimes
 ---
 
+## Musical Journey with the Violin
+I have been playing the violin for the past 5 years and this is my 3rd year in our school’s advanced Chamber Orchestra. We have played pieces ranging from classical, to rock, to original movie scores over the past 4 years. We have been consistently ranked as one of the best orchestras in the state. I have had the opportunity to play alongside professional musicians and my extremely talented peers, so this is truly a phenomenal experience. I intend to continue making music in college, joining orchestras and ensembles. 
+
+Here is a photo of my advanced Chamber Orchestra class in 10th grade. 
+
+![Figure-7](/assets/img/interests/fig-7.jpg){: .mx-auto.d-block :}
+
+Here is a photo of my intermediate String Orchestra class in 9th grade. 
+
+![Figure-8](/assets/img/interests/fig-8.jpg){: .mx-auto.d-block :}
+
+This image is me with our award for best orchestra from the Anaheim Heritage Music Festival. 
+ 
+![Figure-9](/assets/img/interests/fig-9.jpg){: .mx-auto.d-block :}
+
+Here is a link to videos of our most recent concert. 
+
+###### [Link to concert videos](https://drive.google.com/drive/folders/1kVbfxQwXpja9cAYQgVYREmwhDeabPR2e?usp=sharing){:target="_blank"}
+
 ## Numismatics: A Global Collection
 I am an avid numismatist (coin collector). I’ve collected coins from over 75 countries, asking my friends and relatives to bring me coins from all the places they travel. Each country’s currency is reflective of their history and culture, so collecting them allows me to learn a bit more about people across the globe. 
 
@@ -24,25 +43,6 @@ Here are some more photos of the coins to get a clearer look at them.
 ![Figure-5](/assets/img/interests/fig-5.jpg){: .mx-auto.d-block :}
 
 ![Figure-6](/assets/img/interests/fig-6.jpg){: .mx-auto.d-block :}
-
-## Musical Journey with the Violin
-I have been playing the violin for the past 5 years and this is my 3rd year in our school’s advanced Chamber Orchestra. We have played pieces ranging from classical, to rock, to original movie scores over the past 4 years. We have been consistently ranked as one of the best orchestras in the state. I have had the opportunity to play alongside professional musicians and my extremely talented peers, so this is truly a phenomenal experience. I intend to continue making music in college, joining orchestras and ensembles. 
-
-Here is a photo of my advanced Chamber Orchestra class in 10th grade. 
-
-![Figure-7](/assets/img/interests/fig-7.jpg){: .mx-auto.d-block :}
-
-Here is a photo of my intermediate String Orchestra class in 9th grade. 
-
-![Figure-8](/assets/img/interests/fig-8.jpg){: .mx-auto.d-block :}
-
-This image is me with our award for best orchestra from the Anaheim Heritage Music Festival. 
- 
-![Figure-9](/assets/img/interests/fig-9.jpg){: .mx-auto.d-block :}
-
-Here is a link to videos of our most recent concert. 
-
-###### [Link to concert videos](https://drive.google.com/drive/folders/1kVbfxQwXpja9cAYQgVYREmwhDeabPR2e?usp=sharing){:target="_blank"}
 
 ## Peer Tutoring and Academic Support
 I have been part of our school’s CSF club for the past 4 years, tutoring my peers after school in subjects ranging from Algebra, Computer Science, Calculus, Engineering, English, Spanish, and Physics. I have also helped students with paragraph writing and essay revision. This gives me the chance to provide a bit of confidence and support so that they continue to pursue the subjects that interest them rather than become discouraged. Here I am tutoring my classmate in Spanish vocabulary. 
