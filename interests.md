@@ -64,6 +64,21 @@ I am a HAM radio operator with a Technician license. I have been practicing usin
 ## Leadership in Coding and STEM Advocacy
 I am the Chairwoman of our school’s Coding Club. I use my position for recruitment, outreach, and lessons. When I joined the club, I was the only woman, so I have been working to encourage more girls to take an interest in this field. We are currently preparing to compete in the ACSL competition this January. 
 
+## Securing the Digital World
+My love for computers sparked an interest in cybersecurity. I have participated in cybersecurity competitions, completed courses with expert instructors, and earned certifications in the field. These experiences have deepened my understanding and appreciation for how machines function and communicate. I apply the principles I've learned to my projects, employing secure coding practices. As a member of the GIAC advisory board, I provide guidance on cybersecurity implementation to support the safer use of technology.
+
+### Certifications
+
+![Figure-21](/assets/img/interests/fig-21.jpg){: .mx-auto.d-block :}
+
+###### [Link to Certification Badges](https://www.credly.com/users/anjena-raja){:target="_blank"}
+
+### Awards
+
+![Figure-22](/assets/img/interests/fig-22.jpg){: .mx-auto.d-block :}
+
+###### [Link to Award Badges](https://badgr.com/public/collections/7c9b41ec1893440b8f5d4942f34e080a){:target="_blank"}
+
 ## Electronics and Engineering Projects
 I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. I founded the Digital Electronics Club this year to share this passion with my classmates. I have so far taught my 15 members about the basics of electronics and how computers function and we are beginning to work on hands-on projects involving Arduinos and FPGAs. In my spare time I work on smaller projects such as the one depicted below. In these photos, I am soldering a capacitor to a circuit board for an FM radio. 
 
