@@ -75,7 +75,7 @@ My love for computers sparked an interest in cybersecurity. I have participated 
 
 ### Awards
 
-![Figure-22](/assets/img/interests/fig-22.jpg){: .mx-auto.d-block :}
+![Figure-22](/assets/img/interests/fig-22.png){: .mx-auto.d-block :}
 
 ###### [Link to Award Badges](https://badgr.com/public/collections/7c9b41ec1893440b8f5d4942f34e080a){:target="_blank"}
 
