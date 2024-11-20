@@ -80,7 +80,9 @@ My love for computers sparked an interest in cybersecurity. I have participated 
 ###### [Link to Award Badges](https://badgr.com/public/collections/7c9b41ec1893440b8f5d4942f34e080a){:target="_blank"}
 
 ## Electronics and Engineering Projects
-I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. I founded the Digital Electronics Club this year to share this passion with my classmates. I have so far taught my 15 members about the basics of electronics and how computers function and we are beginning to work on hands-on projects involving Arduinos and FPGAs. In my spare time I work on smaller projects such as the one depicted below. In these photos, I am soldering a capacitor to a circuit board for an FM radio. 
+I’ve been working on electronics projects for several years. I love learning how the different parts of circuits fit together and building a functional item from scratch. I look for ways I can integrate my electronics skills with my interest in programming and experimenting. I founded the Digital Electronics Club this year to share this passion with my classmates. I have so far taught my 15 members about the basics of electronics and how computers function and we are beginning to work on hands-on projects involving Arduinos and FPGAs. I have a photo of some of my club members, a few of whom are making funny faces, below. My club advisor, Ms. Kosbab, is on the far left. In my spare time I work on smaller projects such as the one depicted here. In the bottom two photos, I am soldering a capacitor to a circuit board for an FM radio. 
+
+![Figure-23](/assets/img/interests/fig-23.jpg){: .mx-auto.d-block :}
 
 ![Figure-14](/assets/img/interests/fig-14.jpg){: .mx-auto.d-block :}
 
